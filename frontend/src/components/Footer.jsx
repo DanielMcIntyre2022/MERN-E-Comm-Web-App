@@ -8,7 +8,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function Footer() {
   return (
-    <div className="footer-container flex">
+    <div className="footer-container flex max-sm:flex-col">
     <div className="left-container flex flex-col flex-1 p-5 ml-5">
         <div className="logo-container">
             <h1>E-Commerce</h1>
@@ -34,7 +34,7 @@ function Footer() {
             </div>
         </div>
     </div>
-    <div className="center-container flex-1 pt-5">
+    <div className="center-container flex-1 pt-5 max-sm:hidden">
         <h3 className='mb-5'>Useful Links</h3>
         <ul className='m-0 p-0 flex flex-wrap'>
             <li className='w-50% mb-2'>Home</li>
@@ -47,7 +47,7 @@ function Footer() {
             <li className='w-50% mb-2'>Wishlist</li>
         </ul>
     </div>
-    <div className="right-container flex-1 p-5">
+    <div className="right-container flex-1 p-5 max-sm:ml-20">
         <div className='contact-container'>
             <h3>Contact</h3>
             <div className='contact-logo-container mt-5'>
