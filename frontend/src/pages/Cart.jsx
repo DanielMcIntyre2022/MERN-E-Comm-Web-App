@@ -1,6 +1,8 @@
 import Annoucements from "../components/Annoucements";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 function Cart() {
   return (
@@ -9,7 +11,7 @@ function Cart() {
             <Navbar/>
                 <div className="shopping-cart-wrapper p-20">
                     <h1 className="text-center">YOUR BAG</h1>
-                    <div className="top-container flex items-center justify-between">
+                    <div className="top-container flex items-center justify-between p-10">
                         <button className="top-btn p-5 border">Continue Shopping</button>
                     <div className="top-text-container">
                         <span className="cursor-pointer underline m-2">Shopping Bag(2)</span>
@@ -17,7 +19,33 @@ function Cart() {
                     </div>
                     <button className="top-btn p-5 border">Checkout Now</button>
                 </div>
-                    <div className="bottom-container"></div>
+                <div className="bottom-container flex justify-between">
+                    <div className="product-info-container">
+                        <div className="product flex justify-between">
+                            <div className="product-detail flex flex-2 ml-10">
+                                <img className="w-20%" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
+                            <div className="details p-20 flex flex-col">
+                                <h1 className="mb-2"><b className="mr-2">Product:</b>WINTER SWEATER</h1>
+                                <h1 className="mb-2"><b className="mr-2">ID:</b>24304505</h1>
+                                <h1><b className="mr-2">Size:</b>M</h1>
+                                 </div>
+                            </div>
+                            <div className="price-detail flex items-center justify-center flex-col flex-1">
+                                <div className="product-amount-container flex items-center">
+                                    <AddIcon/>
+                                    <p className="m-5 text-2xl">2</p>
+                                    <RemoveIcon/>
+                                </div>
+                                <div className="price">
+                                    <p className="text-2xl">$200</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="product-summary-container">
+                        summary
+                    </div>
+                </div>
                 </div>
             <Footer/>
         </div>
