@@ -1,10 +1,10 @@
 const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const port = process.env.PORT;
-
-dotenv.config();
+const PORT = process.env.PORT;
+const userRoute = require('./routes/user');
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('DB Connection Successful'))
@@ -12,6 +12,8 @@ mongoose.connect(process.env.MONGO_URI)
     console.log(err)
 });
 
-app.listen(port, () => {
-    console.log('server is running!')
+app.use('/api/user', userRoute);
+
+app.listen(PORT, () => {
+    console.log(`server is running! on port ${PORT}`)
 });
