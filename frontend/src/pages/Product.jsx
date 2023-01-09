@@ -19,6 +19,30 @@ function Product() {
                         cumque perferendis doloremque laudantium! Officia fuga itaque natus 
                         placeat quam veniam labore suscipit.</p>
                     <p className="mt-5">$20</p>
+                    <div className="filter-container flex justify-between w-50% mt-10 mb-10">
+                        <div className="filter-one">
+                            <h1>Color</h1>
+                            <option></option>
+                        </div>
+                        <div className="filter-two">
+                            <h1>Size</h1>
+                            <select className="p-2 mr-5">
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="add-container flex items-center w-50% justify-between">
+                        <div className="amount-container flex items-center">
+                            <button className="remove-btn">-</button>
+                                <p className="amount ml-2 mr-2">1</p>
+                            <button className="add-btn">+</button>
+                        </div>
+                        <button>ADD TO CART</button>
+                    </div>
                 </div>
             </div>
             <NewsLetter/>
