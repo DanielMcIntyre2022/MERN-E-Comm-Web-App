@@ -9,7 +9,7 @@ function Navbar() {
         <div className="left-container flex items-center flex-1">
               <div className="language-container cursor-pointer text-sm p-2.5">EN</div>
               <div className="search-bar-container flex items-center border p-2.5">
-                <input className='border-none'/>
+                <input className='border-none outline-none'/>
                 <i><SearchIcon/></i>
               </div>
            </div>
