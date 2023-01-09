@@ -10,7 +10,7 @@ function ProductList() {
          <Annoucements/>
          <Navbar/>
             <h1 className="m-5">Dresses</h1>
-         <div className="filter-container flex justify-between ml-20 mr-20">
+         <div className="filter-container flex justify-between ml-20 mr-20 max-sm:flex max-sm:flex-col">
             <div className="filter m-2"><span className="text-base font-bold mr-2">Filter Products:</span>
                 <select className="p-2 mr-5">
                     <option disabled selected>
