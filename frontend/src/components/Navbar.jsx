@@ -4,22 +4,22 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Navbar() {
   return (
-    <div className='nav-container h-20'>
-        <div className="wrapper flex justify-between items-center pt-10 pb-10 px-20">
-        <div className="left-container flex items-center flex-1">
-              <div className="language-container cursor-pointer text-sm p-2.5">EN</div>
+    <div className="nav-container h-20 max-sm:-ml-16">
+      <div className="wrapper flex justify-between items-center pt-10 pb-10 px-20">
+           <div className="left-container flex items-center flex-1">
+              <div className="language-container cursor-pointer text-sm p-2.5 max-sm:hidden">EN</div>
               <div className="search-bar-container flex items-center border p-2.5">
-                <input className='border-none outline-none'/>
+                <input className='outline-none max-sm:w-28' placeholder='Search'/>
                 <i><SearchIcon/></i>
               </div>
            </div>
            <div className="center-container text-center flex-1">
-            <h1 className='font-bold'>E-Commerce</h1>
+            <h1 className='font-bold max-sm:ml-5'>E-Comm</h1>
            </div>
-           <div className="right-container flex items-center justify-end flex-1">
-              <div className='menu-item-container flex space-x-6'>
-                <div className='menu-item-one'>REGISTER</div>
-                <div className='menu-item-two'>SIGN IN</div>
+           <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
+              <div className='menu-item-container flex space-x-6 ml-5'>
+                <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
+                <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
                 <div className='menu-item-three'>
                 <Badge badgeContent={4} color="primary">
                   <ShoppingCartOutlinedIcon color="action" />
