@@ -2,7 +2,7 @@
 function Login() {
   return (
     <div className="register-page-container w-screen h-screen flex items-center justify-center">
-        <div className="register-wrapper p-20 w-40%">
+        <div className="register-wrapper p-20 w-40% max-sm:w-75%">
             <h1 className="text-lg">SIGN IN</h1>
             <form className="flex flex-col">
                 <input className="border flex-1 mb-3 mt-3 p-2" placeholder="username"/>
