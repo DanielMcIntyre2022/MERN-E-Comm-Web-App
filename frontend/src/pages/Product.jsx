@@ -8,9 +8,9 @@ function Product() {
     <div className="product-page-container">
         <Annoucements/>
         <Navbar/>
-            <div className="product-wrapper p-50 flex mt-10 mb-10">
+            <div className="product-wrapper p-50 flex mt-10 mb-10 max-sm:flex-col">
                 <div className="img-container flex-1">
-                    <img className="w-100% object-cover ml-10" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80" alt="" />
+                    <img className="w-100% object-cover ml-10 max-sm:w-70% max-sm:mr-10 max-sm:pl-12" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80" alt="" />
                 </div>
                 <div className="info-container flex-1 pt-2 pb-2 pl-20 pr-20">
                     <h1 className="font-semibold">Winter Sweater</h1>
@@ -19,7 +19,7 @@ function Product() {
                         cumque perferendis doloremque laudantium! Officia fuga itaque natus 
                         placeat quam veniam labore suscipit.</p>
                     <p className="mt-5">$20</p>
-                    <div className="filter-container flex justify-between w-50% mt-10 mb-10">
+                    <div className="filter-container flex justify-between w-50% mt-10 mb-10 max-sm:w-100%">
                         <div className="filter-one">
                             <h1>Color</h1>
                             <option></option>
@@ -35,7 +35,7 @@ function Product() {
                             </select>
                         </div>
                     </div>
-                    <div className="add-container flex items-center w-50% justify-between">
+                    <div className="add-container flex items-center w-50% justify-between max-sm:w-100%">
                         <div className="amount-container flex items-center">
                             <button className="remove-btn">-</button>
                                 <p className="amount ml-2 mr-2">1</p>
