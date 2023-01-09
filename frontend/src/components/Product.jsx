@@ -6,16 +6,16 @@ function Product({item}) {
   return (
     <div>
         <div className="product-container flex-1 m-5 min-w-260 h-350 flex 
-        items-center justify-center">
+        items-center justify-center bg-slate-100">
         <div className="circle">
-          <div className="product-image-container">
-            <img className="h-80" src={item.img}/>
+          <div className="product-image-container flex items-center justify-center">
+            <img className="h-60 w-60%" src={item.img}/>
           </div>
-          <div className="info-container">
-            <div className="cart-icon-container">
+          <div className="info-container flex items-center justify-center">
+            <div className="cart-icon-container rounded-full">
                 <ShoppingCartOutlinedIcon/>
             </div>
-            <div className="search-icon-container">
+            <div className="search-icon-container rounded-full">
                 <SearchIcon/>
             </div>
             <div className="favourite-icon-container">
