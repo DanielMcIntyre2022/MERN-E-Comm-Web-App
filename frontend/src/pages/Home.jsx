@@ -1,4 +1,5 @@
 import Annoucements from "../components/Annoucements";
+import Catergories from "../components/Catergories";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 
@@ -8,6 +9,7 @@ function Home() {
         <Annoucements/>
         <Navbar/>
         <Slider/>
+        <Catergories/>
     </div>
   )
 }
