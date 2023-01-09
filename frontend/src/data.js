@@ -17,3 +17,21 @@ export const catergories = [
         title: 'SWEATERS'
     }
 ];
+
+// Popular Products //
+
+export const popularProducts = [
+    {
+        id: 1,
+        img: 'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+    },
+    {
+        id: 2,
+        img: 'https://images.unsplash.com/photo-1524860155154-c904628c418c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80'
+    },
+    {
+        id: 3, 
+        img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=404&q=80'
+    }
+
+]
