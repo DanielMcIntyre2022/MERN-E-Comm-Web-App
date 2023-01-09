@@ -9,22 +9,22 @@ function Cart() {
     <div className="shopping-cart-container">
         <Annoucements/>
         <Navbar/>
-            <div className="shopping-cart-wrapper p-20">
+            <div className="shopping-cart-wrapper p-20 max-sm:p-10">
                 <h1 className="text-center">YOUR BAG</h1>
                 <div className="top-container flex items-center justify-between p-10">
                     <button className="top-btn p-5 border">Continue Shopping</button>
-                <div className="top-text-container">
+                <div className="top-text-container max-sm:hidden">
                     <span className="cursor-pointer underline m-2">Shopping Bag(2)</span>
                     <span className="cursor-pointer underline m-5">Your Wishlist(2)</span>
                 </div>
                 <button className="top-btn p-5 border">Checkout Now</button>
             </div>
-                <div className="bottom-container flex justify-between">
+                <div className="bottom-container flex justify-between max-sm:flex-col">
                     <div className="product-info-container">
-                        <div className="product flex justify-between">
+                        <div className="product flex justify-between max-sm:flex-col">
                             <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-20%" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
-                            <div className="details p-20 flex flex-col">
+                                <img className="w-44 object-cover" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
+                            <div className="details p-20 flex flex-col max-sm:-ml-10">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>WINTER SWEATER</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>24304505</h1>
                                 <h1><b className="mr-2">Size:</b>M</h1>
@@ -42,10 +42,10 @@ function Cart() {
                             </div>
                         </div>
                         <hr className="mt-5 mb-5"/>
-                        <div className="product flex justify-between">
+                        <div className="product flex justify-between max-sm:flex-col">
                             <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-20%" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
-                            <div className="details p-20 flex flex-col">
+                                <img className="w-44 object-cover" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
+                            <div className="details p-20 flex flex-col max-sm:-ml-10">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>WINTER SWEATER</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>24304505</h1>
                                 <h1><b className="mr-2">Size:</b>M</h1>
