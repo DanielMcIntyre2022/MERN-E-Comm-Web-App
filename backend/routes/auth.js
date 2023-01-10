@@ -24,11 +24,17 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({ username: req.body.username });
         !user && res.status(401).json('wrong credentials!')
 
-        const hashedPassword = Cryptojs.AES.decrypt(user.password, process.env.PASS_SEC)
-        const password = hashedPassword.toString(Cryptojs.enc.Utf8);
+        const hashedPassword = Cryptojs.AES.decrypt(
+            user.password, 
+            process.env.PASS_SEC);
+        const Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
 
-        password !== req.body.password && res.status(401).json('wrong credentials!')
-        res.status(200).json(user);
+        Orginalpassword !== req.body.password && 
+            res.status(401).json('wrong credentials!');
+
+        const { password, ...others} = user._doc;
+
+        res.status(200).json(others);
 
     } catch (error) {
         res.status(500).json(error);
