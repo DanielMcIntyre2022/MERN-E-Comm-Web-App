@@ -15,11 +15,10 @@ router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
             $set: req.body,
         }, {new:true});
         res.status(200).json(upatedUser);
-    } catch (error){res.status(500).json(error)} {
-        console.log(error)
+    } catch (error){res.status(500).json(err)} {
+        
     }
 });
-
 
 // DELETE USER //
 router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
@@ -37,6 +36,17 @@ router.get('/find/:id', verifyTokenAndAdmin, async(req, res) => {
         const user = await User.findById(req.params.id);
         const { password, ...others} = user._doc;
         res.status(200).json(others);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// GET ALL USERS //
+router.get('/', verifyTokenAndAdmin, async(req, res) => {
+    const query = req.query.new
+    try {
+        const users = query? await User.find().sort({_id:-1}).limit(5) : await User.find();
+        res.status(200).json(users);
     } catch (error) {
         res.status(500).json(error);
     }
