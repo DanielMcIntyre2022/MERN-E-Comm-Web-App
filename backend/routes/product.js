@@ -37,16 +37,16 @@ router.delete('/:id', verifyTokenAndAdmin, async(req, res) => {
         }
     });
 
-// // GET USER //
-// router.get('/find/:id', verifyTokenAndAdmin, async(req, res) => {
-//     try {
-//         const user = await User.findById(req.params.id);
-//         const { password, ...others} = user._doc;
-//         res.status(200).json(others);
-//     } catch (error) {
-//         res.status(500).json(error);
-//     }
-// });
+// // GET PROUDCTS //
+
+router.get('/find/:id', async(req, res) => {
+        try {
+            const product = await Product.findById(req.params.id);
+            res.status(200).json(product);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    });
 
 // // GET ALL USERS //
 // router.get('/', verifyTokenAndAdmin, async(req, res) => {
