@@ -24,7 +24,18 @@ const verifyTokenAndAuthorization = (req, res, next) => {
     });
 };
 
+const verifyTokenAndAdmin = (req, res, next) => {
+    vertifyToken(req, res, () => {
+        if(req.user.isAdmin) {
+            next();
+        } else {
+            res.status(403).json('You are not Admin')
+        }
+    })
+}
+
 module.exports = {
     vertifyToken,
-    verifyTokenAndAuthorization
+    verifyTokenAndAuthorization,
+    verifyTokenAndAdmin
 }
