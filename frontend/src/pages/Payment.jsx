@@ -1,5 +1,5 @@
-
-import { useState } from 'react';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
 function Payment() {
@@ -12,6 +12,22 @@ function Payment() {
         setStripeToken(token)
         console.log(token)
     };
+
+    useEffect(() => {
+      const makeRequest = async () => {
+          try {
+             const response = await axios.post('http://localhost:3048/api/checkout/payment', {
+              tokenId:stripeToken.id,
+              amount:2000,
+             }
+          );
+          console.log(response.data);
+          } catch (error) {
+              console.log(error)
+          }
+      };
+      stripeToken && makeRequest();
+  },[stripeToken]);
 
   return (
     <div className='checkout-container'>
