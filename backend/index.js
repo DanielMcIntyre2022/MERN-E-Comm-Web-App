@@ -22,7 +22,7 @@ app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
 app.use('/api/cart', cartRoute);
-app.use('/api/order', orderRoute);
+app.use('/api/orders', orderRoute);
 
 app.listen(PORT, () => {
     console.log(`server is running! on port ${PORT}`)
