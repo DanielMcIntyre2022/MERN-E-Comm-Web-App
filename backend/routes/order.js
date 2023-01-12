@@ -5,12 +5,12 @@ const router = require('express').Router();
 // CREATE / ADD TO ORDER //
 
 router.post('/', verifyToken, async(req, res) => {
-    const newOrder = new Order(req.body)
+    const newOrder = new Order(req.body);
     try {
-        const savedOder = await newOrder.save()
-        res.status(200).json(savedOder)
+        const savedOrder = await newOrder.save();
+        res.status(200).json(savedOrder);
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error);
     }
 });
 
