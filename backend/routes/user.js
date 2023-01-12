@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const {vertifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} = require('./verifyToken');
+const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} = require('./verifyToken');
 const router = require('express').Router();
 const Cryptojs = require('crypto-js');
 
