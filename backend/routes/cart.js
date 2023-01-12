@@ -1,3 +1,4 @@
+const Cart = require('../models/Cart');
 const Product = require('../models/Product');
 const {verifyTokenAndAdmin, verifyToken, verifyTokenAndAuthorization } = require('./verifyToken');
 const router = require('express').Router();
@@ -5,7 +6,7 @@ const router = require('express').Router();
 // ADD TO CART //
 
 router.post('/', verifyToken, async(req, res) => {
-    const newCart = new Product(req.body)
+    const newCart = new Cart(req.body)
     try {
         const savedCart = await newCart.save()
         res.status(200).json(savedCart)
@@ -14,11 +15,11 @@ router.post('/', verifyToken, async(req, res) => {
     }
 });
 
-// UPDATE PRODUCT //
+// UPDATE CART //
 
 router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
         try {
-            const upatedCart = await Product.findByIdAndUpdate(req.params.id, {
+            const upatedCart = await Cart.findByIdAndUpdate(req.params.id, {
                 $set: req.body,
             }, {new:true});
             res.status(200).json(upatedCart);
@@ -26,16 +27,16 @@ router.put('/:id', verifyTokenAndAuthorization, async (req, res) => {
     }
 });
 
-// // // DELETE PRODUCT //
+// // // DELETE CART //
 
-// router.delete('/:id', verifyTokenAndAdmin, async(req, res) => {
-//     try {
-//         await User.findByIdAndDelete(req.params.id)
-//         res.status(200).json('Product has been deleted')
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// });
+router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
+        try {
+            await Cart.findByIdAndDelete(req.params.id)
+            res.status(200).json('Cart item has been deleted')
+        } catch (error) {
+            res.status(500).json(error)
+        }
+    });
 
 // // // GET PRODUCTS //
 
