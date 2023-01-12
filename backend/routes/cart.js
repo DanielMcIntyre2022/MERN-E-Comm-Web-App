@@ -58,3 +58,5 @@ router.get('/', verifyTokenAndAdmin, async(req, res) => {
         res.status(500).json(error)
     }
 });
+
+module.exports = router;
