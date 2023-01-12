@@ -38,16 +38,16 @@ router.delete('/:id', verifyTokenAndAuthorization, async(req, res) => {
         }
     });
 
-// // // GET PRODUCTS //
+// // // GET USER CART //
 
-// router.get('/find/:id', async(req, res) => {
-//     try {
-//         const product = await Product.findById(req.params.id);
-//         res.status(200).json(product);
-//     } catch (error) {
-//         res.status(500).json(error);
-//     }
-// });
+router.get('/find/userId', verifyTokenAndAuthorization, async(req, res) => {
+        try {
+            const cart = await Cart.findById(req.params.id);
+            res.status(200).json(cart);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    });
 
 // // // GET ALL PRODUCTS //
 
