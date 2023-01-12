@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react';
 import { useState, useEffect } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
