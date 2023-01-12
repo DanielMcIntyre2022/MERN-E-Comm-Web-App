@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react';
-import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StripeCheckout from 'react-stripe-checkout';
 
 function Payment() {
@@ -8,29 +9,29 @@ function Payment() {
     const KEY = process.env.REACT_APP_STRIPE_P_KEY
 
     const [stripeToken, setStripeToken ] = useState(null);
+    const navigate = useNavigate();
     
-    const history = useHistory();
-
     const onToken = (token) => {
         setStripeToken(token)
         console.log(token)
     };
 
     useEffect(() => {
-      const makeRequest = async () => {
-          try {
-             const response = await axios.post('http://localhost:3060/api/checkout/payment', {
-              tokenId:stripeToken.id,
-              amount:2000,
-             }
-          );
-          console.log(response.data);
-          } catch (error) {
-              console.log(error)
-          }
-      };
-      stripeToken && makeRequest();
-  },[stripeToken]);
+        const makeRequest = async () => {
+            try {
+               const response = await axios.post('http://localhost:3060/api/checkout/payment', {
+               tokenId:stripeToken.id,
+                amount:2000,
+               }
+            );
+            console.log(response.data);
+            navigate('/paysuccess');
+            } catch (error) {
+                console.log(error)
+            }
+        };
+        stripeToken && makeRequest();
+    },[stripeToken, navigate]);
 
   return (
     <div className='checkout-container'>
@@ -43,8 +44,8 @@ function Payment() {
         amount={2000}
         token={onToken}
         stripeKey={KEY}
-        >
-          { stripeToken ? (<span>Processing. Please wait...</span>) : (
+        > 
+        { stripeToken ? (<span>Processing. Please wait...</span>) : (
             <button className='border'>Checkout</button>
         )}
         </StripeCheckout>
