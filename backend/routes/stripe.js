@@ -7,13 +7,14 @@ router.post('/payment', (req, res) => {
         amount:req.body.amount,
         currency:"cad"
     }, 
-    (stripeError, StripeResponse => {
+    (stripeError, StripeResponse) => {
         if(stripeError){
             res.status(500).json(stripeError);
         } else {
             res.status(200).json(StripeResponse)
-        }
-    }))
+        }  
+    }
+)
 });
 
 module.exports = router;
