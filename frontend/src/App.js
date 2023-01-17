@@ -13,6 +13,12 @@ function App() {
     <Router>
       <div className="App">
         <Routes>  
+            <Route exact path='/' element={<Home/>}/>
+            <Route path='/products/:category' element={<ProductList/>}/>
+            <Route path='/product/:id' element={<Product/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
             <Route path='/payments' element={<Payment/>}/>
             <Route path='/paysuccess' element={<PaySuccess/>}/>
         </Routes>
