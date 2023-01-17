@@ -24,3 +24,12 @@ yarn-error.log*
 
 # ENV
 .env
+
+# Request Methods 
+
+requestMethods
+requestMethods.js
+frontend/src/requestMethods.js
+/frontend/src/requestMethods.js
+/src/requestMethods.js
+/src/requestMethods

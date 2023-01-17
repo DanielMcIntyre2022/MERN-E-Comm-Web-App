@@ -1,9 +1,29 @@
 import Annoucements from "../components/Annoucements";
 import Navbar from "../components/Navbar";
-import NewsLetter from "../components/NewsLetter";
+import NewsLetter from '../components/NewsLetter';
 import Footer from "../components/Footer";
+import axios from "axios";
+import { useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { publicRequest } from "../requestMethods";
 
 function Product() {
+
+    const location = useLocation();
+    const productId = location.pathname.split('/')[2];
+    const [ product, setProduct ] = useState({});
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const response = publicRequest.get('/products/find'+productId);
+                setProduct(response.data);
+            } catch (error) {
+            getProduct()
+            }
+        }
+    },[]);
+
   return (
     <div className="product-page-container">
         <Annoucements/>
@@ -45,7 +65,7 @@ function Product() {
                     </div>
                 </div>
             </div>
-            <NewsLetter/>
+        <NewsLetter/>
         <Footer/>
     </div>
   )
