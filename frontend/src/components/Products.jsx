@@ -1,4 +1,4 @@
-import { popularProducts } from '../data';
+
 import { useState, useEffect } from 'react';
 import Product from './Product';
 import axios from 'axios';
@@ -22,9 +22,18 @@ function Products({catergoryLink, filters, sort}) {
     getProducts();
   },[catergoryLink]);
 
+  useEffect(() => {
+    catergoryLink && setFilteredProducts(
+      products.filter(item => Object.entries(filters).every(([key,value])=>
+        item[key].includes(value)
+        )
+      )
+    );
+  },[products, catergoryLink, filters]);
+
   return (
     <div className='products-container p-20 flex justify-between flex-wrap'>
-        {popularProducts.map(item => (
+        {filteredProducts.map(item => (
             <Product item={item} key={item.id}/>
         ))}
     </div>
