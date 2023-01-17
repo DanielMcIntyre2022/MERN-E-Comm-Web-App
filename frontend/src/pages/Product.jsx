@@ -37,7 +37,7 @@ function Product() {
     };
 
     const handleClick = () => {
-        dispatch(addProduct({product, quantity, price:product.price * quantity}));
+        dispatch(addProduct({ ...product, quantity, size }));
     };
 
   return (
