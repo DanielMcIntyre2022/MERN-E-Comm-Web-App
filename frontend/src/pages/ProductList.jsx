@@ -10,13 +10,13 @@ function ProductList() {
 
     const location = useLocation();
     const catergoryLink = location.pathname.split('/')[2];
-    const [ filter, setFilters ] = useState({});
+    const [ filters, setFilters ] = useState({});
     const [ sort, setSort ] = useState("newest")
 
     const handleFilters = (e) => {
         const valueSelected = e.target.value;
         setFilters({
-            ...filter,
+            ...filters,
             [e.target.name]: valueSelected
         });
     };
@@ -58,7 +58,7 @@ function ProductList() {
                 </select>
             </div>
          </div>
-         <Products/>
+         <Products catergoryLink={catergoryLink} filters={filters} sort={sort}/>
          <NewsLetter/>
          <Footer/>
     </div>
