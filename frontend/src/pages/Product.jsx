@@ -12,6 +12,7 @@ function Product() {
     const location = useLocation();
     const productId = location.pathname.split('/')[2];
     const [ product, setProduct ] = useState({});
+    const [ quantity, setQuantity ] = useState(1);
 
     useEffect(() => {
         const getProduct = async () => {
@@ -23,6 +24,14 @@ function Product() {
         }
         getProduct();
     },[productId]);
+
+    const handleQuanitity = (type) => {
+        if(type === 'decrease') {
+            setQuantity(quantity - 1)
+        } else {
+            setQuantity(quantity + 1)
+        }
+    };
 
   return (
     <div className="product-page-container">
@@ -52,9 +61,9 @@ function Product() {
                     </div>
                     <div className="add-container flex items-center w-50% justify-between max-sm:w-100%">
                         <div className="amount-container flex items-center">
-                            <button className="remove-btn">-</button>
-                                <p className="amount ml-2 mr-2">1</p>
-                            <button className="add-btn">+</button>
+                            <button className="remove-btn" onClick={() => handleQuanitity('decrease')}>-</button>
+                                <p className="amount ml-2 mr-2">{quantity}</p>
+                            <button className="add-btn" onClick={() => handleQuanitity('increase')}>+</button>
                         </div>
                         <button>ADD TO CART</button>
                     </div>
