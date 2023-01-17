@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 function Product({item}) {
+  
   return (
     <div>
         <div className="product-container flex-1 m-5 min-w-260 h-350 flex 

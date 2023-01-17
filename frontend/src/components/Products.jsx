@@ -1,4 +1,4 @@
-
+import { popularProducts } from '../data';
 import { useState, useEffect } from 'react';
 import Product from './Product';
 import axios from 'axios';
@@ -30,6 +30,22 @@ function Products({catergoryLink, filters, sort}) {
       )
     );
   },[products, catergoryLink, filters]);
+
+  useEffect(() => {
+    if(sort === 'newest') {
+      setFilteredProducts(prev =>
+          [...prev].sort((a,b) => a.createdAt - b.createdAt)
+        );
+    } else if (sort === 'highest') {
+      setFilteredProducts(prev => 
+        [...prev].sort((a,b) => a.price - b.price)
+        );
+    } else {
+      setFilteredProducts(prev =>
+        [...prev].sort((a,b) => b.price - a.price)
+        );
+    }
+  },[sort]);
 
   return (
     <div className='products-container p-20 flex justify-between flex-wrap'>
