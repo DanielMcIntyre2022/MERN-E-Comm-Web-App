@@ -55,7 +55,7 @@ const cart = useSelector(state => state.cart)
                         ORDER SUMMARY
                     <div className="summary-item mt-5 mb-5 flex justify-between">
                         <span className="summary-total mr-2">Subtotal:</span>
-                        <span className="summary-price">$400</span>
+                        <span className="summary-price">${cart.totalPrice}</span>
                     </div>
                     <div className="summary-item mt-5 mb-5 flex justify-between">
                         <span className="summary-shipping mr-2">Shipping:</span>
@@ -63,7 +63,7 @@ const cart = useSelector(state => state.cart)
                     </div>
                     <div className="summary-total mt-5 mb-5 flex justify-between">
                         <span className="summary-shipping font-bold mr-2">Total:</span>
-                        <span className="summary-price">$404.99</span>
+                        <span className="summary-price">${cart.totalPrice + 4.99}</span>
                     </div>
                     <button className="border p-2">CHECK OUT NOW</button>
                 </div>
