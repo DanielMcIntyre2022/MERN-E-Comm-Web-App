@@ -4,10 +4,40 @@ import Footer from "../components/Footer";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector } from "react-redux";
+import { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import { useEffect } from "react";
+import { userRequest } from '../requestMethods';
+import { useNavigate } from 'react-router-dom';
+
+const KEY = process.env.REACT_APP_STRIPE_P_KEY;
 
 function Cart() {
 
-const cart = useSelector(state => state.cart)
+const cart = useSelector(state => state.cart);
+const [stripeToken, setStripeToken ] = useState(null);
+const navigate = useNavigate();
+
+const onToken = (token) => {
+    setStripeToken(token)
+};
+
+console.log(stripeToken);
+
+useEffect(() => {
+    const makeRequest = async () => {
+        try {
+            const response = await userRequest.post('/checkout/payment', {
+                tokenId: stripeToken.id,
+                amount: cart.totalPrice
+            });
+                navigate('/paysuccess', {data:response.data});
+        } catch (error) {
+            
+        }
+    };
+    stripeToken && makeRequest();
+},[stripeToken, cart.totalPrice, navigate]);
 
   return (
     <div className="shopping-cart-container">
@@ -65,7 +95,17 @@ const cart = useSelector(state => state.cart)
                         <span className="summary-shipping font-bold mr-2">Total:</span>
                         <span className="summary-price">${cart.totalPrice + 4.99}</span>
                     </div>
-                    <button className="border p-2">CHECK OUT NOW</button>
+                    <StripeCheckout
+                    name='E-Comm'
+                    image="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    billingAddress
+                    shippingAddress
+                    description={`Your total is ${cart.totalPrice + 4.99}`}
+                    amount={cart.totalPrice +4.99}
+                    token={onToken}
+                    stripeKey={KEY}
+                    />
+                    {/* <button className="border p-2">CHECK OUT NOW</button> */}
                 </div>
                 </div>
             </div>
