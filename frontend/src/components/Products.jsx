@@ -5,14 +5,16 @@ import axios from 'axios';
 
 function Products({catergoryLink, filters, sort}) {
   
-  const [ products, useProducts ] = useState([]);
+  const [ products, setProducts ] = useState([]);
   const [ filteredProducts, setFilteredProducts ] = useState([]);
 
   useEffect(() => {
     const getProducts = async() => {
       try {
-        const response = await axios.get('http://localhost:3048/api/products');
-        console.log(response);
+        const response = await axios.get( catergoryLink 
+          ? `http://localhost:3060/api/products?category=${catergoryLink}` 
+          : `http://localhost:3060/api/products`);
+          setProducts(response.data);
       } catch (error) {
         
       }
