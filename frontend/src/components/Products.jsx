@@ -36,7 +36,7 @@ function Products({catergoryLink, filters, sort}) {
       setFilteredProducts(prev =>
           [...prev].sort((a,b) => a.createdAt - b.createdAt)
         );
-    } else if (sort === 'highest') {
+    } else if (sort === 'lowest') {
       setFilteredProducts(prev => 
         [...prev].sort((a,b) => a.price - b.price)
         );
