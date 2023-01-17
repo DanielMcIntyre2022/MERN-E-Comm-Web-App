@@ -1,8 +1,12 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
+  
+  const cartQuantity = useSelector(state => state.cart.quantity);
+  
   return (
     <div className="nav-container h-20 max-sm:-ml-16">
       <div className="wrapper flex justify-between items-center pt-10 pb-10 px-20">
@@ -21,7 +25,7 @@ function Navbar() {
                 <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
                 <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
                 <div className='menu-item-three'>
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={cartQuantity} color="primary">
                   <ShoppingCartOutlinedIcon color="action" />
                </Badge>
               </div>
