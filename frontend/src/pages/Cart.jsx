@@ -3,8 +3,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useSelector } from "react-redux";
 
 function Cart() {
+
+const cart = useSelector(state => state.cart)
+
   return (
     <div className="shopping-cart-container">
         <Annoucements/>
@@ -21,47 +25,31 @@ function Cart() {
             </div>
                 <div className="bottom-container flex justify-between max-sm:flex-col">
                     <div className="product-info-container">
-                        <div className="product flex justify-between max-sm:flex-col">
+                        {
+                            cart.products.map(product => (
+                                <div className="product flex justify-between max-sm:flex-col">
                             <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-44 object-cover" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
+                                <img className="w-44 object-cover" src={product.img}/>
                             <div className="details p-20 flex flex-col max-sm:-ml-10">
-                                <h1 className="mb-2"><b className="mr-2">Product:</b>WINTER SWEATER</h1>
-                                <h1 className="mb-2"><b className="mr-2">ID:</b>24304505</h1>
-                                <h1><b className="mr-2">Size:</b>M</h1>
+                                <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
+                                <h1 className="mb-2"><b className="mr-2">ID:</b>{product.id}</h1>
+                                <h1><b className="mr-2">Size:</b>{product.size}</h1>
                                  </div>
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
                                 <div className="product-amount-container flex items-center">
                                     <AddIcon/>
-                                    <p className="m-5 text-2xl">2</p>
+                                    <p className="m-5 text-2xl">{product.quantity}</p>
                                     <RemoveIcon/>
                                 </div>
                                 <div className="price">
-                                    <p className="text-2xl">$200</p>
+                                    <p className="text-2xl">${product.price * product.quantity}</p>
                                 </div>
                             </div>
                         </div>
+                            ))
+                        }       
                         <hr className="mt-5 mb-5"/>
-                        <div className="product flex justify-between max-sm:flex-col">
-                            <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-44 object-cover" src="https://images.unsplash.com/photo-1611911813383-67769b37a149?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"></img>
-                            <div className="details p-20 flex flex-col max-sm:-ml-10">
-                                <h1 className="mb-2"><b className="mr-2">Product:</b>WINTER SWEATER</h1>
-                                <h1 className="mb-2"><b className="mr-2">ID:</b>24304505</h1>
-                                <h1><b className="mr-2">Size:</b>M</h1>
-                                 </div>
-                            </div>
-                            <div className="price-detail flex items-center justify-center flex-col flex-1">
-                                <div className="product-amount-container flex items-center">
-                                    <AddIcon/>
-                                    <p className="m-5 text-2xl">2</p>
-                                    <RemoveIcon/>
-                                </div>
-                                <div className="price">
-                                    <p className="text-2xl">$200</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div className="product-summary-container flex-1 border p-10">
                         ORDER SUMMARY

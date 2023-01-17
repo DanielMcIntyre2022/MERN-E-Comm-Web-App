@@ -2,6 +2,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   
@@ -25,9 +26,11 @@ function Navbar() {
                 <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
                 <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
                 <div className='menu-item-three'>
+                  <Link to='/cart'>
                 <Badge badgeContent={cartQuantity} color="primary">
                   <ShoppingCartOutlinedIcon color="action" />
                </Badge>
+                </Link>
               </div>
              </div>
            </div>
