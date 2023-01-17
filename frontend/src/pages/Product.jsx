@@ -53,9 +53,9 @@ function Product() {
                         <div className="filter-two">
                             <h1>Size</h1>
                             <select className="p-2 mr-5">
-                                {product.size.map((s) => (
+                                {/* {product.size.map((s) => (
                                      <option key={s}>{s}</option>
-                                ))}
+                                ))} */}
                             </select>
                         </div>
                     </div>
