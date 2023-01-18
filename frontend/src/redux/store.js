@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import cartReducer from './cartRedux';
 import userReducer from './userRedux';
 import {
@@ -12,7 +12,6 @@ import {
     REGISTER,
   } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
-import { PersistGate } from 'redux-persist/integration/react';
 
 const persistConfig = {
     key: 'root',
@@ -20,13 +19,12 @@ const persistConfig = {
     storage,
   };
 
-  const persistedReducer = persistReducer(persistConfig, userReducer)
+  const rootReducer = combineReducers({ user:userReducer, cart:cartReducer })
+
+  const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
-    reducer:{
-        cart: cartReducer,
-        user: persistedReducer
-    },
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
