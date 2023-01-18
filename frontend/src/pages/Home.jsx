@@ -1,7 +1,7 @@
 import Annoucements from "../components/Annoucements";
 import Catergories from "../components/Catergories";
 import Navbar from "../components/Navbar";
-import Slider from "../components/Slider";
+import SliderComponent from "../components/SliderComponent";
 import Products from "../components/Products";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ function Home() {
     <div>
         <Annoucements/>
         <Navbar/>
-        <Slider/>
+        <SliderComponent/>
         <Catergories/>
         <Products/>
         <NewsLetter/>
