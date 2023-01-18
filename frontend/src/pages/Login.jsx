@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Navbar from '../components/Navbar';
 import { login } from '../redux/apiCalls';
 
 function Login() {
@@ -15,7 +16,9 @@ function Login() {
   };
 
   return (
+
     <div className="register-page-container w-screen h-screen flex items-center justify-center">
+      <Navbar/>
         <div className="register-wrapper p-20 w-40% max-sm:w-75%">
             <h1 className="text-lg">SIGN IN</h1>
             <form className="flex flex-col">

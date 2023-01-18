@@ -19,11 +19,15 @@ function Navbar() {
               </div>
            </div>
            <div className="center-container text-center flex-1">
-            <h1 className='font-bold max-sm:ml-5'>E-Comm</h1>
+            <Link to='/'>
+                <h1 className='font-bold max-sm:ml-5'>E-Comm</h1>
+            </Link>
            </div>
            <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
               <div className='menu-item-container flex space-x-6 ml-5'>
-                <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
+                <Link to='/register'>
+                    <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
+                </Link>
                 <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
                 <div className='menu-item-three'>
                   <Link to='/cart'>
