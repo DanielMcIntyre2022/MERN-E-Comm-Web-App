@@ -27,7 +27,7 @@ const columns = [
                 <Link to={'/product/' + params.row.id}>
                     <button className='product-list-edit mr-10 cursor-pointer'>Edit</button>
                 </Link>
-                    <DeleteOutlineIcon className='product-list-delete cursor-pointer text-red-500' onClick={() => handleDelete(params.row.id)}/>
+                    {/* <DeleteOutlineIcon className='product-list-delete cursor-pointer text-red-500' onClick={() => handleDelete(params.row.id)}/> */}
                 </>
             )
         }}

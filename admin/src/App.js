@@ -6,9 +6,9 @@ function App() {
   return (
     <Router>
         <div className="App">
-        <Route path='/' element={<ProductList/>}/>
-        {/* <Route path='/users' element={<UserList/>}/> */}
-        <ProductList/>
+        <Routes>
+          <Route path='/products' element={<ProductList/>}/>
+        </Routes>
         </div>
     </Router>
   );
