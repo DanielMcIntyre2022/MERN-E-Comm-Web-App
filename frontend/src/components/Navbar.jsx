@@ -1,12 +1,20 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { logoutUser } from '../redux/apiCalls';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
   
   const cartQuantity = useSelector(state => state.cart.quantity);
+  const loggedUser = useSelector(state => state.user.currentUser);
+
+  console.log(loggedUser);
+
+  const handleClick = () => {
+    logoutUser()
+  };
   
   return (
     <div className="nav-container h-20 max-sm:-ml-16">
@@ -25,10 +33,16 @@ function Navbar() {
            </div>
            <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
               <div className='menu-item-container flex space-x-6 ml-5'>
-                <Link to='/register'>
-                    <div className='menu-item-one'><h1 className='max-sm:text-xs'>REGISTER</h1></div>
-                </Link>
-                <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
+              {
+                  loggedUser ? <div className='logout-container'> 
+                  <button
+                  onClick={handleClick}
+                  >
+                      LOGOUT 
+                  </button>
+                  </div> 
+                  : <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
+                }  
                 <div className='menu-item-three'>
                   <Link to='/cart'>
                 <Badge badgeContent={cartQuantity} color="primary">
