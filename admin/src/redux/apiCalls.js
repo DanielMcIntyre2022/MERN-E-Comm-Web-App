@@ -25,3 +25,4 @@ export const deleteProduct = async (id, dispatch) => {
         dispatch(deleteProductFailure())
     }
 };
+
