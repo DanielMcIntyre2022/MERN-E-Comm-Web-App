@@ -1,11 +1,11 @@
 const Product = require('../models/Product');
-const {verifyTokenAndAdmin} = require('./verifyToken');
+// const {verifyTokenAndAdmin} = require('./verifyToken');
 const router = require('express').Router();
-const Cryptojs = require('crypto-js');
+// const Cryptojs = require('crypto-js');
 
 // CREATE/ADD PRODUCTS //
 
-router.post('/', verifyTokenAndAdmin, async(req, res) => {
+router.post('/', async(req, res) => {
     const newProduct = new Product(req.body)
     try {
         const savedProduct = await newProduct.save()
@@ -17,7 +17,7 @@ router.post('/', verifyTokenAndAdmin, async(req, res) => {
 
 // UPDATE PRODUCT //
 
-router.put('/:id', verifyTokenAndAdmin, async (req, res) => {
+router.put('/:id', async (req, res) => {
         try {
             const upatedProduct = await Product.findByIdAndUpdate(req.params.id, {
                 $set: req.body,
@@ -29,7 +29,7 @@ router.put('/:id', verifyTokenAndAdmin, async (req, res) => {
 
 // // DELETE PRODUCT //
 
-router.delete('/:id', verifyTokenAndAdmin, async(req, res) => {
+router.delete('/:id', async(req, res) => {
         try {
             await Product.findByIdAndDelete(req.params.id)
             res.status(200).json('Product has been deleted')
