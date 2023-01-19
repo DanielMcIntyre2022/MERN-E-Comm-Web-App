@@ -1,5 +1,10 @@
-import { getProductStart, getProductSuccess, getProductFailure, deleteProductStart,
-    deleteProductSuccess, deleteProductFailure } from "./productRedux";
+import { getProductStart, getProductSuccess, 
+    getProductFailure, deleteProductStart,
+    deleteProductSuccess, deleteProductFailure,
+    updateProductStart, updateProductSuccess,
+    updateProductFailure, createProductStart,
+    createProductSuccess, createProductFailure
+} from "./productRedux";
 import { publicRequest } from '../requestMethods';
 
 // GET PRODUCTS //
@@ -26,3 +31,26 @@ export const deleteProduct = async (id, dispatch) => {
     }
 };
 
+// UPDATE PRODUCT //
+
+export const updateProduct = async (id, product, dispatch) => {
+    dispatch(updateProductStart());
+    try {
+        // update 
+        dispatch(updateProductSuccess({id, product}))
+    } catch (error) {
+        dispatch(updateProductFailure())
+    }
+};
+
+// CREATE/ADD PRODUCT //
+
+export const addProduct = async (product, dispatch) => {
+    dispatch(createProductStart());
+    try {
+        const response = await publicRequest.post(`/products`, {product})
+        dispatch(createProductSuccess(response.data))
+    } catch (error) {
+        dispatch(createProductFailure())
+    }
+};
