@@ -8,24 +8,27 @@ function NewProduct() {
                   <input type='file' id='file'/>
               </div>
               <div className='add-product-item flex flex-col mt-5 w-2/4'>
-                  <label>Name</label>
+                  <label>Title</label>
                   <input 
                   type='text' 
                   placeholder='Winter Sweater' 
                   className="border-[2px] p-2"/>
+                  <label>Description</label>
+                  <input 
+                  type='text' 
+                  placeholder='description...' 
+                  className="border-[2px] p-2"/>
+                  <label>Price</label>
+                  <input 
+                  type='text' 
+                  placeholder='100' 
+                  className="border-[2px] p-2"/>
               </div>
               <div className="add-product-item flex flex-col mt-5 w-2/4">
                   <label>Stock</label>
-                  <input 
-                  type='text' 
-                  placeholder='123' 
-                  className="border-[2px] p-2"/>
-              </div>
-              <div className="add-product-item mt-5">
-                  <label>Active</label>
-                  <select name='active' id='idStock'>
-                      <option value='yes'>Yes</option>
-                      <option value='no'>No</option>
+                  <select>
+                      <option value='true'>Yes</option>
+                      <option value='false'>No</option>
                   </select>
               </div>
               <button className="new-user-button w-28 h-12 border-[2px] bg-teal-500 text-white rounded-lg mt-14">Create</button>
