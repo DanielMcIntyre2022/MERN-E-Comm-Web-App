@@ -3,10 +3,19 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getProducts } from '../../redux/apiCalls';
 
 function ProductList() {
 
     const [data, setData ] = useState(productRows);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getProducts(dispatch);
+    },[dispatch])
 
     const handleDelete = (id) => {
         setData(data.filter((item) => item.id !== id));
