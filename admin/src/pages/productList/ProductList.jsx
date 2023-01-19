@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getProducts } from '../../redux/apiCalls';
+import { deleteProduct, getProducts } from '../../redux/apiCalls';
 
 function ProductList() {
 
@@ -19,7 +19,7 @@ function ProductList() {
     },[dispatch])
 
     const handleDelete = (id) => {
-        setData(data.filter((item) => item.id !== id));
+        deleteProduct(id, dispatch);
     };
 
     const columns = [
@@ -46,7 +46,7 @@ function ProductList() {
                       <Link to={'/product/' + params.row.id}>
                           <button className='product-list-edit mr-10 cursor-pointer'>Edit</button>
                       </Link>
-                          <DeleteOutlineIcon className='product-list-delete cursor-pointer text-red-500' onClick={() => handleDelete(params.row.id)}/>
+                          <DeleteOutlineIcon className='product-list-delete cursor-pointer text-red-500' onClick={() => handleDelete(params.row._id)}/>
                       </>
                   )
               }}
