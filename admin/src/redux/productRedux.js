@@ -53,6 +53,20 @@ export const productslice = createSlice({
         updateProductFailure:(state) => {
             state.error = true;
         },
+
+        // Create New Product //
+
+        createProductStart:(state) => {
+            state.isFetching = true;
+            state.error = false;
+        },
+        createProductSuccess:(state, action) => {
+            state.isFetching = false;
+            state.products.push(action.payload)
+        },
+        createProductFailure:(state) => {
+            state.error = true;
+        },
     },
 });
 
@@ -65,7 +79,10 @@ export const {
     deleteProductFailure,
     updateProductStart,
     updateProductSuccess,
-    updateProductFailure
+    updateProductFailure,
+    createProductStart,
+    createProductSuccess,
+    createProductFailure
 } = productslice.actions;
 
 export default productslice.reducer;
