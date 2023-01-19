@@ -46,12 +46,7 @@ useEffect(() => {
             <div className="shopping-cart-wrapper p-20 max-sm:p-10">
                 <h1 className="text-center">YOUR BAG</h1>
                 <div className="top-container flex items-center justify-between p-10">
-                    <button className="top-btn p-5 border">Continue Shopping</button>
-                <div className="top-text-container max-sm:hidden">
-                    <span className="cursor-pointer underline m-2">Shopping Bag(2)</span>
-                    <span className="cursor-pointer underline m-5">Your Wishlist(2)</span>
-                </div>
-                <button className="top-btn p-5 border">Checkout Now</button>
+                    <button className="top-btn p-5 border" onClick={() => navigate('/')}>Continue Shopping</button>
             </div>
                 <div className="bottom-container flex justify-between max-sm:flex-col">
                     <div className="product-info-container">
@@ -62,18 +57,13 @@ useEffect(() => {
                                 <img className="w-44 object-cover" src={product.img}/>
                             <div className="details p-20 flex flex-col max-sm:-ml-10">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
-                                <h1 className="mb-2"><b className="mr-2">ID:</b>{product.id}</h1>
+                                <h1 className="mb-2"><b className="mr-2">ID:</b>{product._id}</h1>
                                 <h1><b className="mr-2">Size:</b>{product.size}</h1>
                                  </div>
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
-                                <div className="product-amount-container flex items-center">
-                                    <AddIcon/>
-                                    <p className="m-5 text-2xl">{product.quantity}</p>
-                                    <RemoveIcon/>
-                                </div>
                                 <div className="price">
-                                    <p className="text-2xl">${product.price * product.quantity}</p>
+                                    <p className="text-2xl mr-20">${product.price * product.quantity}</p>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +95,6 @@ useEffect(() => {
                     token={onToken}
                     stripeKey={KEY}
                     />
-                    {/* <button className="border p-2">CHECK OUT NOW</button> */}
                 </div>
                 </div>
             </div>
