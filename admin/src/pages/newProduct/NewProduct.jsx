@@ -1,3 +1,5 @@
+
+
 function NewProduct() {
     return (
       <div className="new-product flex-[4] ml-10">
@@ -13,15 +15,26 @@ function NewProduct() {
                   type='text' 
                   placeholder='Winter Sweater' 
                   className="border-[2px] p-2"/>
+              </div>
+              <div className='add-product-item flex flex-col mt-5 w-2/4'>
                   <label>Description</label>
                   <input 
                   type='text' 
                   placeholder='description...' 
                   className="border-[2px] p-2"/>
+              </div>
+              <div className='add-product-item flex flex-col mt-5 w-2/4'>
                   <label>Price</label>
                   <input 
                   type='text' 
                   placeholder='100' 
+                  className="border-[2px] p-2"/>
+              </div>
+              <div className='add-product-item flex flex-col mt-5 w-2/4'>
+                  <label>Catergories</label>
+                  <input 
+                  type='text' 
+                  placeholder='Mens Shoes' 
                   className="border-[2px] p-2"/>
               </div>
               <div className="add-product-item flex flex-col mt-5 w-2/4">
