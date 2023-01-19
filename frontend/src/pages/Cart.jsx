@@ -64,6 +64,7 @@ useEffect(() => {
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>{product._id}</h1>
                                 <h1><b className="mr-2">Size:</b>{product.size}</h1>
+                                <h1 className="mb-2"><b>Quantity: </b>{product.quantity}</h1>
                                  </div>
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
