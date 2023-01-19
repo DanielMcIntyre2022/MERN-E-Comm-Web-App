@@ -23,7 +23,7 @@ function ProductList() {
     };
 
     const columns = [
-        { field: '_id', headerName: 'ID', width: 90 },
+        { field: '_id', headerName: 'ID', width: 220 },
         { 
           field: 'product', 
           headerName: 'Product', 
@@ -32,7 +32,7 @@ function ProductList() {
               return (
                   <div className='productListUser'>
                       <img className='productListImg' src={params.row.img} alt=''/>
-                      {params.row.name}
+                      {params.row.title}
                   </div>
               )
           }
