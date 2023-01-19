@@ -1,7 +1,7 @@
 import { productRows } from '../../data';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { DataGrid } from '@mui/x-data-grid';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -43,7 +43,7 @@ function ProductList() {
         { field: 'action', headerName: 'Action', width: 150, renderCell: (params) => {
                   return (
                       <>
-                      <Link to={'/product/' + params.row.id}>
+                      <Link to={'/product/' + params.row._id}>
                           <button className='product-list-edit mr-10 cursor-pointer'>Edit</button>
                       </Link>
                           <DeleteOutlineIcon className='product-list-delete cursor-pointer text-red-500' onClick={() => handleDelete(params.row._id)}/>
