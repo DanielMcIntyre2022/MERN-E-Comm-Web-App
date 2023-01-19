@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 function Product({item}) {
   return (
-    <div className="product-container flex-1 m-5 min-w-260 h-350 flex items-center justify-center bg-slate-100">
+    <div className="product-container flex-1 m-5 min-w-280 h-350 flex items-center justify-center bg-slate-100 mt-10">
         <div className="circle">
           <div className="product-image-container flex items-center justify-center">
-            <img className="h-60 w-60%" src={item.img}/>
+            <img className="h-60 w-100%" src={item.img}/>
           </div>
           <div className="info-container flex items-center justify-center">
             <div className="cart-icon-container rounded-full">

@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import { useEffect } from "react";
@@ -17,12 +17,17 @@ function Cart() {
 const cart = useSelector(state => state.cart);
 const [stripeToken, setStripeToken ] = useState(null);
 const navigate = useNavigate();
+const dispatch = useDispatch();
 
 const onToken = (token) => {
     setStripeToken(token)
 };
 
 console.log(stripeToken);
+
+const emptyCartClick = () => {
+    dispatch()
+}
 
 useEffect(() => {
     const makeRequest = async () => {
@@ -95,6 +100,7 @@ useEffect(() => {
                     token={onToken}
                     stripeKey={KEY}
                     />
+                    {/* <span><button onClick={}>Clear Cart</button></span> */}
                 </div>
                 </div>
             </div>
