@@ -1,12 +1,15 @@
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from "../../firebase";
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { addProduct } from "../../redux/apiCalls";
 
 function NewProduct() {
 
 const [ inputs, setInputs ] = useState({});
 const [ file, setFile ] = useState(null);
 const [ catergories, setCatergories ] = useState([]);
+const dispatch = useDispatch();
 
 const handleChange = (e) => {
     setInputs(prev => {
@@ -53,14 +56,13 @@ uploadTask.on('state_changed',
   // Handle successful uploads on complete
   // For instance, get the download URL: https://firebasestorage.googleapis.com/...
   getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-    console.log({...inputs, img: downloadURL, catergories: catergories});
+    const product = {...inputs, img: downloadURL, catergories: catergories};
+    addProduct(product, dispatch)
   });
 }
 );
 
 };
-
-console.log(file);
 
   return (
     <div className="new-product flex-[4] ml-10">
