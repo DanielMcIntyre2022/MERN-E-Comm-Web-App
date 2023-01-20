@@ -10,10 +10,10 @@ function NewsLetter() {
         <div className="description-title">
             <p className='text-2x1 font-light mb-10'>Get timely updates from your favourite products</p>
         </div>
-        <div className="input-container flex w-30% h-10 bg-white justify-between border-4">
+        <div className="input-container flex w-30% h-10 bg-white justify-between border-2">
             <input
             placeholder='Your email'
-            className='outline-none flex-8 pl-5'
+            className='outline-none flex-8 pl-5 max-sm:-ml-10'
             />
             <button>
                 <SendIcon/>
