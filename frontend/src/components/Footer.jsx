@@ -20,7 +20,7 @@ function Footer() {
                 veniam maxime id. Iste voluptatibus veniam tenetur </p>
             </div>
         </div>
-        <div className="socials-container flex max-sm:-ml-20">
+        <div className="socials-container flex max-sm:items-center">
             <div className='socials-facebook w-7'>
                 <FacebookOutlinedIcon/>
             </div>
