@@ -47,12 +47,17 @@ function Products({catergoryLink, filters, sort}) {
   },[sort]);
 
   return (
-    <div className='products-container p-20 flex flex-wrap'>
-        {catergoryLink ? filteredProducts.map(item => (
-            <Product item={item} key={item.id}/>
-        )) : products.map(item => (
-            <Product item={item} key={item.id}/>
-        ))}
+    <div className='products-container'>
+      <div className='popular-items-container mt-10'>
+          <div className='popular-product-photos p-20 flex flex-wrap -mb-10'>
+        
+            {catergoryLink ? filteredProducts.map(item => (
+                <Product item={item} key={item.id}/>
+            )) : products.map(item => (
+                <Product item={item} key={item.id}/>
+            ))}
+            </div>
+        </div>
     </div>
   )
 }

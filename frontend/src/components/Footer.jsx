@@ -5,6 +5,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import RoomIcon from '@mui/icons-material/Room';
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import {Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -37,13 +38,11 @@ function Footer() {
     <div className="center-container flex-1 pt-5 max-sm:hidden">
         <h3 className='mb-5'>Useful Links</h3>
         <ul className='m-0 p-0 flex flex-wrap'>
-            <li className='w-50% mb-2'>Home</li>
-            <li className='w-50% mb-2'>Cart</li>
-            <li className='w-50% mb-2'>Men's Fashion</li>
-            <li className='w-50% mb-2'>Women's Fashion</li>
-            <li className='w-50% mb-2'>Accessories</li>
-            <li className='w-50% mb-2'>My Account</li>
-            <li className='w-50% mb-2'>Track Your Order</li>
+            <li className='w-50% mb-2'><Link to='/'>Home</Link></li>
+            <li className='w-50% mb-2'><Link to='/cart'>Cart </Link></li>
+            <li className='w-50% mb-2'><Link to='/products/T-Shirts'>T-Shirts</Link></li>
+            <li className='w-50% mb-2'><Link to='/products/Jackets'>Jackets</Link></li>
+            <li className='w-50% mb-2'><Link to='/products/Sweaters'>Sweaters</Link></li>
             <li className='w-50% mb-2'>Wishlist</li>
         </ul>
     </div>
