@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className="footer-container flex max-sm:flex-col ml-28">
     <div className="left-container flex flex-col flex-1 p-5">
-        <div className="logo-container">
+        <div className="logo-container max-sm:-ml-20">
             <h1>E-Commerce</h1>
             <div className='description-container mt-5 mb-5'>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing 
@@ -20,7 +20,7 @@ function Footer() {
                 veniam maxime id. Iste voluptatibus veniam tenetur </p>
             </div>
         </div>
-        <div className="socials-container flex">
+        <div className="socials-container flex max-sm:-ml-20">
             <div className='socials-facebook w-7'>
                 <FacebookOutlinedIcon/>
             </div>
@@ -47,7 +47,7 @@ function Footer() {
         </ul>
     </div>
     <div className="right-container flex-1 p-5 max-sm:ml-20">
-        <div className='contact-container'>
+        <div className='contact-container max-sm:-ml-20'>
             <h3>Contact</h3>
             <div className='contact-logo-container mt-5'>
                 <p className='mb-2'><RoomIcon className='mr-2'/>Fake Street</p>

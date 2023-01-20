@@ -48,8 +48,8 @@ function Products({catergoryLink, filters, sort}) {
 
   return (
     <div className='products-container'>
-      <div className='popular-items-container mt-10'>
-          <div className='popular-product-photos p-20 flex flex-wrap -mb-10'>
+      <div className='popular-items-container mt-20'>
+          <div className='popular-product-photos p-20 flex flex-wrap -mb-10 max-sm:-mt-52 '>
             {catergoryLink ? filteredProducts.map(item => (
                 <Product item={item} key={item.id}/>
             )) : products.slice(0,8).map(item => (
