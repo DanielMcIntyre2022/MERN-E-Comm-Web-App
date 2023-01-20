@@ -47,10 +47,10 @@ function Products({catergoryLink, filters, sort}) {
   },[sort]);
 
   return (
-    <div className='products-container p-20 flex justify-between flex-wrap -mb-20'>
+    <div className='products-container p-20 flex flex-wrap'>
         {catergoryLink ? filteredProducts.map(item => (
             <Product item={item} key={item.id}/>
-        )) : products.slice(0,8).map(item => (
+        )) : products.map(item => (
             <Product item={item} key={item.id}/>
         ))}
     </div>

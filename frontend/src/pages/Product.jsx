@@ -50,7 +50,6 @@ function Product() {
                 </div>
                 <div className="info-container flex-1 pt-2 pb-2 pl-20 pr-20">
                     <h1 className="font-semibold">{product.title}</h1>
-                    <p className="mt-5">{product.description}</p>
                     <p className="mt-5">${product.price}</p>
                     <div className="filter-container flex justify-between w-50% mt-10 mb-10 max-sm:w-100%">
                         <div className="filter-one">

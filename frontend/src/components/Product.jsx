@@ -8,19 +8,13 @@ function Product({item}) {
     <div className="product-container flex-1 m-5 min-w-280 h-350 flex items-center justify-center bg-slate-100 mt-10">
         <div className="circle">
           <div className="product-image-container flex items-center justify-center">
+          <Link to={`/product/${item._id}`}>
             <img className="h-60 w-100%" src={item.img}/>
+          </Link>
           </div>
           <div className="info-container flex items-center justify-center">
-            <div className="cart-icon-container rounded-full">
-                <ShoppingCartOutlinedIcon/>
-            </div>
             <div className="search-icon-container rounded-full">
-                <Link to={`/product/${item._id}`}>
-                    <SearchIcon/>
-                </Link>
-            </div>
-            <div className="favourite-icon-container">
-                <FavoriteBorderIcon/>
+              <p><b>${item.price}.00</b></p>
             </div>
           </div>
         </div>
