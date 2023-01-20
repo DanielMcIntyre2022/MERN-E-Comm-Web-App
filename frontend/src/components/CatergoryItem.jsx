@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 function CatergoryItem({item}) {
 
-  console.log(item)
   return (
     <div className="catergory-item-container flex-1 m-3 h-16 -mt-10 relative">
         <Link to={`/products/${item.catergory}`}>

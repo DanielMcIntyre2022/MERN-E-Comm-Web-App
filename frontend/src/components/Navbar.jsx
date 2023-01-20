@@ -10,7 +10,7 @@ function Navbar() {
   const cartQuantity = useSelector(state => state.cart.quantity);
   const loggedUser = useSelector(state => state.user.currentUser);
 
-  console.log(loggedUser);
+  // console.log(loggedUser);
 
   const handleClick = () => {
     logoutUser()

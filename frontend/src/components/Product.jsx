@@ -7,7 +7,7 @@ function Product({item}) {
   return (
     <div className="product-container flex-1 m-5 min-w-280 h-350 flex items-center justify-center bg-slate-100 mt-10">
         <div className="circle">
-          <div className="product-image-container flex items-center justify-center">
+          <div className="product-image-container flex items-center justify-center w-56">
           <Link to={`/product/${item._id}`}>
             <img className="h-60 w-100%" src={item.img}/>
           </Link>
