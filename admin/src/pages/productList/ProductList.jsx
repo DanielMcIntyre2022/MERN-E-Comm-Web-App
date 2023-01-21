@@ -2,14 +2,11 @@ import { productRows } from '../../data';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { DataGrid } from '@mui/x-data-grid';
 import {Link} from 'react-router-dom'
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { deleteProduct, getProducts } from '../../redux/apiCalls';
 
 function ProductList() {
-
-    const [data, setData ] = useState(productRows);
 
     const dispatch = useDispatch();
     const products = useSelector(state => state.product.products);
@@ -55,10 +52,14 @@ function ProductList() {
   return (
     <div className='product-list-container'>
         <div className='product-list-header'>
-            <h1>Product List</h1>
-            <span className='mb-10'><button>Add Product</button></span>
+            <h1 className=''>Product List</h1>
+            <div>
+            <span>
+                <button><Link to='/newProduct'>Add Product</Link></button>
+            </span>
+            </div>
         </div>
-    <div className='product-list' style={{ height: 600, width: '100%' }}>
+    <div className='product-list mt-24' style={{ height: 600, width: '100%' }}>
         <DataGrid
         rows={products}
         disableSelectionOnClick
