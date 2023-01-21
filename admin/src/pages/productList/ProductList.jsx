@@ -30,7 +30,7 @@ function ProductList() {
           width: 130,
           renderCell: (params) => {
               return (
-                  <div className='productListUser'>
+                  <div className='productList'>
                       <img className='productListImg' src={params.row.img} alt=''/>
                       {params.row.title}
                   </div>
@@ -53,7 +53,11 @@ function ProductList() {
       ];
 
   return (
-    <div className='product-list' style={{ height: 400, width: '100%' }}>
+    <div className='product-list-container'>
+        <div className='product-list-header'>
+            <h1>Product List</h1>
+        </div>
+    <div className='product-list' style={{ height: 600, width: '100%' }}>
         <DataGrid
         rows={products}
         disableSelectionOnClick
@@ -62,7 +66,9 @@ function ProductList() {
         pageSize={10}
         checkboxSelection
       />
+      </div>
     </div>
+    
   )
 }
 

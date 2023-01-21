@@ -11,7 +11,7 @@ function Product({item}) {
           </div>
           <div className="info-container flex items-center justify-center">
             <div className="search-icon-container rounded-full">
-              <p><b>${item.price}.00</b></p>
+              <p className='mt-5 font-bold'>${item.price}.00</p>
             </div>
           </div>
         </div>
