@@ -13,8 +13,6 @@ function Navbar() {
   const cartQuantity = useSelector(state => state.cart.quantity);
   const loggedUser = useSelector(state => state.user.currentUser);
 
-  // console.log(loggedUser);
-
   const handleClick = () => {
     logoutUser(dispatch)
   };
@@ -49,13 +47,18 @@ function Navbar() {
                     <div className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></div>
                   </div>
                 }  
-                <div className='menu-item-three'>
+                {
+                  loggedUser ? <div className='menu-item-three'>
                   <Link to='/cart'>
                 <Badge badgeContent={cartQuantity} color="primary">
                   <ShoppingCartOutlinedIcon color="action" />
                </Badge>
                 </Link>
               </div>
+              : <Badge color="primary">
+              <ShoppingCartOutlinedIcon color="action" />
+           </Badge>
+                } 
              </div>
            </div>
       </div>

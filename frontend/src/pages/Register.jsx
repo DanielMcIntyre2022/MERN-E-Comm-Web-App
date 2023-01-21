@@ -3,8 +3,9 @@ import Navbar from '../components/Navbar';
 function Register() {
   return (
     <>
-    <Navbar/>
+    
     <div className="register-page-container w-screen h-screen flex items-center justify-center">
+    <Navbar/>
         <div className="register-wrapper p-20 w-40% max-sm:w-75%">
             <h1 className="text-lg">CREATE AN ACCOUNT</h1>
             <form className="flex flex-wrap">

@@ -21,7 +21,7 @@ function Login() {
       <Navbar/>
         <div className="register-wrapper p-20 w-40% max-sm:w-75%">
             <h1 className="text-lg">SIGN IN</h1>
-            <form className="flex flex-col">
+            <form className="flex flex-col flex-wrap">
                 <input className="border flex-1 mb-3 mt-3 p-2" placeholder="username" onChange={(e) => setUserName(e.target.value)}/>
                 <input className="border flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                 <button className="border p-2" onClick={handleClick} disabled={isFetching}>LOGIN</button>
