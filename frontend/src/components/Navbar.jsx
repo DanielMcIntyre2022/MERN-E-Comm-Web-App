@@ -4,8 +4,11 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { logoutUser } from '../redux/apiCalls';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 function Navbar() {
+
+  const dispatch = useDispatch();
   
   const cartQuantity = useSelector(state => state.cart.quantity);
   const loggedUser = useSelector(state => state.user.currentUser);
@@ -13,7 +16,7 @@ function Navbar() {
   // console.log(loggedUser);
 
   const handleClick = () => {
-    logoutUser()
+    logoutUser(dispatch)
   };
   
   return (
@@ -41,7 +44,10 @@ function Navbar() {
                       LOGOUT 
                   </button>
                   </div> 
-                  : <div className='menu-item-two'><h1 className='max-sm:text-xs'>LOGIN</h1></div>
+                  : <div className='menu-item-two'>
+                    <h1 className='max-sm:text-xs'><Link to='/login'>LOGIN</Link></h1>
+                    <h1 className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></h1>
+                  </div>
                 }  
                 <div className='menu-item-three'>
                   <Link to='/cart'>
