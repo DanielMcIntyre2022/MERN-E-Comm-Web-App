@@ -44,9 +44,9 @@ function Navbar() {
                       LOGOUT 
                   </button>
                   </div> 
-                  : <div className='menu-item-two'>
-                    <h1 className='max-sm:text-xs'><Link to='/login'>LOGIN</Link></h1>
-                    <h1 className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></h1>
+                  : <div className='menu-item-two flex space-x-6'>
+                    <div className='max-sm:text-xs'><Link to='/login'>LOGIN</Link></div>
+                    <div className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></div>
                   </div>
                 }  
                 <div className='menu-item-three'>
