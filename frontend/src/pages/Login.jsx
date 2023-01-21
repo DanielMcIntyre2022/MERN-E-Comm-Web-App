@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom'
 import { login } from '../redux/apiCalls';
 
 function Login() {
@@ -16,23 +17,23 @@ function Login() {
   };
 
   return (
-
-    <div className="register-page-container w-screen h-screen items-center justify-center">
-      <Navbar/>
+    <>
+    <Navbar/>
+    <div className="register-page-container w-screen h-screen flex items-center justify-center">
         <div className="register-wrapper p-20 w-40% max-sm:w-75%">
             <h1 className="text-lg">SIGN IN</h1>
             <form className="flex flex-col flex-wrap">
-                <input className="border flex-1 mb-3 mt-3 p-2" placeholder="username" onChange={(e) => setUserName(e.target.value)}/>
-                <input className="border flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
-                <button className="border p-2" onClick={handleClick} disabled={isFetching}>LOGIN</button>
+                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="username" onChange={(e) => setUserName(e.target.value)}/>
+                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
+                <button className="border-4 p-2" onClick={handleClick} disabled={isFetching}>LOGIN</button>
                {
-                error && <span className='text-red-400'>Something went wrong...</span>
-               }
-                <a className="mt-5 mb-5 cursor-pointer">Forgot password?</a>
-                <a className="cursor-pointer">Create a new account</a>
+                error && <span className='text-red-400'>Wrong username or password</span>
+               } : <div></div>
+                <a className="cursor-pointer"> <Link to='/register'>Create a new account</Link></a>
             </form>
         </div>
     </div>
+  </>
   )
 }
 
