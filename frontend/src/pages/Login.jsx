@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom'
 import { login } from '../redux/apiCalls';
 
 function Login() {
@@ -27,9 +26,10 @@ function Login() {
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                 <button className="border-4 p-2" onClick={handleClick} disabled={isFetching}>LOGIN</button>
                {
-                error && <span className='text-red-400'>Wrong username or password</span>
-               } : <div></div>
-                <a className="cursor-pointer"> <Link to='/register'>Create a new account</Link></a>
+                error && <span className='text-red-400'>Wrong username or password...</span>
+               }
+                {/* <a className="mt-5 mb-5 cursor-pointer">Forgot password?</a> */}
+                <a className="cursor-pointer">Create a new account</a>
             </form>
         </div>
     </div>
