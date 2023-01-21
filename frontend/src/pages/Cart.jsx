@@ -9,6 +9,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { useEffect } from "react";
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
+import { clearCart } from "../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE_P_KEY;
 
@@ -23,10 +24,8 @@ const onToken = (token) => {
     setStripeToken(token)
 };
 
-console.log(stripeToken);
-
 const emptyCartClick = () => {
-    dispatch()
+    clearCart(dispatch);
 }
 
 useEffect(() => {
@@ -101,7 +100,7 @@ useEffect(() => {
                     token={onToken}
                     stripeKey={KEY}
                     />
-                    {/* <span><button onClick={}>Clear Cart</button></span> */}
+                    <span><button className='border-4 ml-10 p-2' onClick={emptyCartClick}>Clear Cart</button></span>
                 </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-import { loginFailure, loginStart, loginSuccess, logout } from "./userRedux"
+import { loginFailure, loginStart, loginSuccess, logout } from "./userRedux";
+import { clearCart } from "./cartRedux";
 import { publicRequest } from '../requestMethods';
 
 export const login = async (dispatch, user) => {
@@ -14,6 +15,14 @@ export const login = async (dispatch, user) => {
 export const logoutUser = async (dispatch) => {
     try {
      dispatch(logout());
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const clearUserCart = async (dispatch) => {
+    try {
+     dispatch(clearCart());
     } catch (error) {
         console.log(error);
     }
