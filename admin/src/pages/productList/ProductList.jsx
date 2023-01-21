@@ -56,6 +56,7 @@ function ProductList() {
     <div className='product-list-container'>
         <div className='product-list-header'>
             <h1>Product List</h1>
+            <span className='mb-10'><button>Add Product</button></span>
         </div>
     <div className='product-list' style={{ height: 600, width: '100%' }}>
         <DataGrid
