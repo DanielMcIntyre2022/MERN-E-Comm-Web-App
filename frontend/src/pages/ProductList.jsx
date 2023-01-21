@@ -36,7 +36,7 @@ function ProductList() {
                     <option>Black</option>
                     <option>Red</option>
                     <option>Blue</option>
-                    <option>Yellow</option>
+                    <option>Beige</option>
                     <option>Green</option>
                 </select>
                 <select name='size' className="p-2" onChange={handleFilters}>
