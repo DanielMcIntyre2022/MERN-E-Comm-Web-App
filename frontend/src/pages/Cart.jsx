@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import { useEffect } from "react";
+import { addProduct, removeProduct } from "../redux/cartRedux";
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from "../redux/cartRedux";
@@ -17,11 +18,28 @@ function Cart() {
 
 const cart = useSelector(state => state.cart);
 const [stripeToken, setStripeToken ] = useState(null);
+const [ quantity, setQuantity ] = useState();
 const navigate = useNavigate();
 const dispatch = useDispatch();
 
 const onToken = (token) => {
     setStripeToken(token)
+};
+
+const handleClickAddProduct = () => {
+    dispatch(addProduct(quantity));
+};
+
+const handleClickRemoveProduct = () => {
+    dispatch(removeProduct(quantity));
+};
+
+const handleQuanitity = (type) => {
+    if(type === 'decrease') {
+        quantity > 1 && setQuantity(quantity - 1)
+    } else {
+        setQuantity(quantity + 1)
+    }
 };
 
 const emptyCartClick = () => {
@@ -68,9 +86,9 @@ useEffect(() => {
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
                             <div className="product-amount-container flex items-center">
-                                    <AddIcon/>
+                                    <AddIcon onClick={() => handleQuanitity('increase')} className="cursor-pointer"/>
                                     <p className="m-5 text-2xl">{product.quantity}</p>
-                                    <RemoveIcon/>
+                                    <RemoveIcon onClick={() => handleQuanitity('decrease')}className="cursor-pointer"/>
                                 </div>
                                 <div className="price">
                                     <p className="text-2xl">${product.price * product.quantity}</p>
