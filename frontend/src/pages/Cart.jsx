@@ -67,8 +67,13 @@ useEffect(() => {
                                  </div>
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
+                            <div className="product-amount-container flex items-center">
+                                    <AddIcon/>
+                                    <p className="m-5 text-2xl">{product.quantity}</p>
+                                    <RemoveIcon/>
+                                </div>
                                 <div className="price">
-                                    <p className="text-2xl mr-20">${product.price * product.quantity}</p>
+                                    <p className="text-2xl">${product.price * product.quantity}</p>
                                 </div>
                             </div>
                         </div>
