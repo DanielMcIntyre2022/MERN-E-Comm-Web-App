@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 const mongoose = require('mongoose');
-const PORT = process.env.BACKENDPORT || PORT;
+const PORT = process.env.BACKENDPORT;
 const userRoute = require('./backend/routes/user');
 const authRoute = require('./backend/routes/auth');
 const productRoute = require('./backend/routes/product');
