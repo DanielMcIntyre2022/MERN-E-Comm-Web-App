@@ -29,12 +29,6 @@ app.use('/api/cart', cartRoute);
 app.use('/api/orders', orderRoute);
 app.use('/api/checkout', stripeRoute);
 
-// check if application is on heroku //
-
-if (process.env.NODE_ENV === 'production') {
-    
-}
-
 app.listen(PORT, () => {
     console.log('Backend running')
 });
