@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "frontend": "cd frontend && npm start",
     "backend": "cd backend && nodemon index.js",
     "start_full_app": "concurrently \"npm run backend\" \"npm run frontend\""
