@@ -23,6 +23,7 @@
   "homepage": "https://github.com/DanielMcIntyre2022/FINAL-E-Comm-Portfolio-Web-App#readme",
   "dependencies": {
     "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.8.4",
     "nodemon": "^2.0.20"
