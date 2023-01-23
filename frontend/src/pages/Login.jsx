@@ -27,8 +27,7 @@ function Login() {
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
                 <button className="border-4 p-2" onClick={handleClick} disabled={isFetching}>LOGIN</button>
                {
-                error ? <span className='text-red-400'>Wrong username or password</span>
-                : <div></div>
+                error && <span className='text-red-400'>Wrong username or password</span>
                } 
                 <a className="cursor-pointer"><Link to='/register'>Create a new account</Link></a>
             </form>
