@@ -7,7 +7,7 @@
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "test": "react-scripts test",
     "frontend": "cd frontend && npm start",
-    "backend": "cd backend && nodemon index.js",
+    "backend": "nodemon index.js",
     "start_full_app": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "repository": {
