@@ -4,7 +4,6 @@ dotenv.config();
 const app = express();
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || PORT;
-// const HOST = process.env.HOST;
 const userRoute = require('./backend/routes/user');
 const authRoute = require('./backend/routes/auth');
 const productRoute = require('./backend/routes/product');
