@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "src": "cd src && npm start",
-    "server": "cd backend && nodemon index.js",
-    "start_full_app": "concurrently \"npm run server\" \"npm run src\""
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && nodemon index.js",
+    "start_full_app": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
