@@ -5,12 +5,12 @@ const app = express();
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || PORT;
 // const HOST = process.env.HOST;
-const userRoute = require('./routes/user');
-const authRoute = require('./routes/auth');
-const productRoute = require('./routes/product');
-const cartRoute = require('./routes/cart');
-const orderRoute = require('./routes/order');
-const stripeRoute = require('./routes/stripe');
+const userRoute = require('./backend/routes/user');
+const authRoute = require('./backend/routes/auth');
+const productRoute = require('./backend/routes/product');
+const cartRoute = require('./backend/routes/cart');
+const orderRoute = require('./backend/routes/order');
+const stripeRoute = require('./backend/routes/stripe');
 const cors = require('cors');
 
 mongoose.connect(process.env.MONGO_URI)
