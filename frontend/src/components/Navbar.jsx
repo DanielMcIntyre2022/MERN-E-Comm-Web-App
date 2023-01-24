@@ -14,7 +14,7 @@ function Navbar() {
   const loggedUser = useSelector(state => state.user.currentUser);
 
   const handleClick = () => {
-    logoutUser(dispatch)
+    dispatch(logoutUser());
   };
   
   return (

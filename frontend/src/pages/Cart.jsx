@@ -43,8 +43,8 @@ const handleQuanitity = (type) => {
 };
 
 const emptyCartClick = () => {
-    clearCart(dispatch);
-}
+    dispatch(clearCart());
+};
 
 useEffect(() => {
     const makeRequest = async () => {
