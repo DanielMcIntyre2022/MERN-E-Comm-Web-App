@@ -26,22 +26,6 @@ const onToken = (token) => {
     setStripeToken(token)
 };
 
-const handleClickAddProduct = () => {
-    dispatch(addProduct(quantity));
-};
-
-const handleClickRemoveProduct = () => {
-    dispatch(removeProduct(quantity));
-};
-
-const handleQuanitity = (type) => {
-    if(type === 'decrease') {
-        quantity > 1 && setQuantity(quantity - 1)
-    } else {
-        setQuantity(quantity + 1)
-    }
-};
-
 const emptyCartClick = () => {
     dispatch(clearCart());
 };
@@ -85,11 +69,7 @@ useEffect(() => {
                                  </div>
                             </div>
                             <div className="price-detail flex items-center justify-center flex-col flex-1">
-                            <div className="product-amount-container flex items-center">
-                                    <AddIcon onClick={() => handleQuanitity('increase')} className="cursor-pointer"/>
-                                    <p className="m-5 text-2xl">{product.quantity}</p>
-                                    <RemoveIcon onClick={() => handleQuanitity('decrease')}className="cursor-pointer"/>
-                                </div>
+                           
                                 <div className="price">
                                     <p className="text-2xl">${product.price * product.quantity}</p>
                                 </div>
