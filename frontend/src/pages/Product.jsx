@@ -57,12 +57,6 @@ function Product() {
                             <option></option>
                         </div>
                         <div className="filter-two">
-                            <h1>Size</h1>
-                            <select className="filter-size p-2 mr-5" onChange={(e)=> setSize(e.target.value)}>
-                                {/* {product.size.map((filteredSize) => (
-                                     <option className='filterOption' key={filteredSize}>{filteredSize}</option>
-                                ))} */}
-                            </select>
                         </div>
                     </div>
                     <div className="add-container flex items-center w-100% justify-between max-sm:w-100%">
