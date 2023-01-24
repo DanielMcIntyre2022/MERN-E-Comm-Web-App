@@ -5,6 +5,7 @@ import { logoutUser } from '../redux/apiCalls';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { clearCart } from "../redux/cartRedux";
 
 function Navbar() {
 
@@ -14,7 +15,8 @@ function Navbar() {
   const loggedUser = useSelector(state => state.user.currentUser);
 
   const handleClick = () => {
-    dispatch(logoutUser());
+    logoutUser(dispatch);
+    dispatch(clearCart());
   };
   
   return (

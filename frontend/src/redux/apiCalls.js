@@ -20,10 +20,4 @@ export const logoutUser = async (dispatch) => {
     }
 };
 
-// export const clearUserCart = async (dispatch) => {
-//     try {
-//      dispatch(clearCart());
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
+
