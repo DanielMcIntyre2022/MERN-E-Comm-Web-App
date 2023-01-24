@@ -1,6 +1,14 @@
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/');
+  };
+
   return (
     <>
     <Navbar/>
@@ -15,7 +23,7 @@ function Register() {
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password"/>
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="confirm password"/>
                 <div>
-                  <button className="flex border-4 p-2">CREATE</button>
+                  <button onClick={handleClick} className="flex border-4 p-2">CREATE</button>
                 </div>
             </form>
         </div>
