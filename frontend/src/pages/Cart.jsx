@@ -54,30 +54,26 @@ useEffect(() => {
                 <div className="top-container flex items-center justify-between p-10">
                     <button className="top-btn p-5 border" onClick={() => navigate('/')}>Continue Shopping</button>
             </div>
-                <div className="bottom-container flex justify-between max-sm:flex-col">
+                <div className="bottom-container flex justify-between max-xl:flex-col">
                     <div className="product-info-container">
                         {
                             cart.products.map(product => (
-                                <div className="product flex justify-between max-sm:flex-col">
+                        <div className="product flex justify-between">
                             <div className="product-detail flex flex-2 ml-10">
                                 <img className="w-44 object-cover" src={product.img}/>
                             <div className="details p-20 flex flex-col max-sm:-ml-10">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>{product._id}</h1>
                                 <h1 className="mb-2"><b>Quantity: </b>{product.quantity}</h1>
+                                <h1 className="mb-2"><b>Price: </b>${product.price * product.quantity}</h1>
                                  </div>
-                            </div>
-                            <div className="price-detail flex items-center justify-center flex-col flex-1">
-                                <div className="price">
-                                    <p className="text-2xl">${product.price * product.quantity}</p>
-                                </div>
                             </div>
                         </div>
                             ))
                         }       
                         <hr className="mt-5 mb-5"/>
                     </div>
-                    <div className="product-summary-container flex-1 border p-10">
+                    <div className="product-summary-container flex-1 border p-10 ml-10">
                         ORDER SUMMARY
                     <div className="summary-item mt-5 mb-5 flex justify-between">
                         <span className="summary-total mr-2">Subtotal:</span>
