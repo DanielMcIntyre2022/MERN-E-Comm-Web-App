@@ -19,7 +19,7 @@ function Payment() {
     useEffect(() => {
         const makeRequest = async () => {
             try {
-               const response = await axios.post('http://localhost:3060/api/checkout/payment', {
+               const response = await axios.post(`${process.env.REACT_APP_BACKENDAPI}/api/checkout/payment`, {
                tokenId:stripeToken.id,
                 amount:2000,
                }

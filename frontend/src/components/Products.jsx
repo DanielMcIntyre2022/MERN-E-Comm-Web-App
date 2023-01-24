@@ -9,10 +9,11 @@ function Products({catergoryLink, filters, sort}) {
 
   useEffect(() => {
     const getProducts = async() => {
+      console.log(process.env.REACT_APP_BACKENDAPI);
       try {
         const response = await axios.get( catergoryLink 
-          ? `http://localhost:3060/api/products?category=${catergoryLink}` 
-          : `http://localhost:3060/api/products`);
+          ? `${process.env.REACT_APP_BACKENDAPI}/products?category=${catergoryLink}` 
+          : `${process.env.REACT_APP_BACKENDAPI}/products`);
           setProducts(response.data);
       } catch (error) {
         
