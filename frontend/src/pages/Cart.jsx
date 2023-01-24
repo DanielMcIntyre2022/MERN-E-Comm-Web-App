@@ -48,7 +48,7 @@ useEffect(() => {
             <div className="shopping-cart-wrapper p-20 max-sm:p-10">
                 <h1 className="text-center">YOUR BAG</h1>
                 <div className="top-container flex items-center justify-between p-10">
-                    <button className="top-btn p-5 border" onClick={() => navigate('/')}>Continue Shopping</button>
+                    <button className="top-btn p-5 border max-sm:ml-12" onClick={() => navigate('/')}>Continue Shopping</button>
             </div>
                 <div className="bottom-container flex justify-between max-xl:flex-col">
                     <div className="product-info-container">
@@ -56,7 +56,7 @@ useEffect(() => {
                             cart.products.map(product => (
                         <div className="product flex justify-between">
                             <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-44 object-cover" src={product.img}/>
+                                <img className="w-44 object-cover max-sm:w-20 max-sm:h-20 max-sm:mt-20" src={product.img}/>
                             <div className="details p-20 flex flex-col max-sm:-ml-10">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>{product._id}</h1>
@@ -93,7 +93,7 @@ useEffect(() => {
                     token={onToken}
                     stripeKey={KEY}
                     />
-                    <span><button className='border-4 ml-10 p-2' onClick={emptyCartClick}>Clear Cart</button></span>
+                    <span><button className='border-4 ml-10 p-2 max-sm:ml-6' onClick={emptyCartClick}>Clear Cart</button></span>
                 </div>
                 </div>
             </div>
