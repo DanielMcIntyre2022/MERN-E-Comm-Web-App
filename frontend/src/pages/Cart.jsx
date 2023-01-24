@@ -1,13 +1,10 @@
 import Annoucements from "../components/Annoucements";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import { useEffect } from "react";
-import { addProduct, removeProduct } from "../redux/cartRedux";
 import { userRequest } from '../requestMethods';
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from "../redux/cartRedux";
@@ -18,7 +15,6 @@ function Cart() {
 
 const cart = useSelector(state => state.cart);
 const [stripeToken, setStripeToken ] = useState(null);
-const [ quantity, setQuantity ] = useState();
 const navigate = useNavigate();
 const dispatch = useDispatch();
 
