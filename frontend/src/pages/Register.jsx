@@ -20,8 +20,8 @@ function Register() {
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="last name"/>
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="email"/>
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="username"/>
-                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password"/>
-                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="confirm password"/>
+                <input className="border-4 flex-1 mb-3 mt-3 p-2" type='password' placeholder="password"/>
+                <input className="border-4 flex-1 mb-3 mt-3 p-2" type='password' placeholder="confirm password"/>
                 <div>
                   <button onClick={handleClick} className="flex border-4 p-2">CREATE</button>
                 </div>
