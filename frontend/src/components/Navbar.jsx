@@ -60,13 +60,18 @@ function Navbar() {
                   </div>
                 }  
                 {
-                  loggedUser && <div className='menu-item-three'>
+                  loggedUser ? <div className='menu-item-three'>
                   <Link to='/cart'>
                 <Badge badgeContent={cartQuantity} color="primary">
                   <ShoppingCartOutlinedIcon color="action" />
-               </Badge>
+                  </Badge>
                 </Link>
-              </div>
+              </div> : 
+              <Link to='/cart'>
+              <Badge badgeContent={cartQuantity} color="primary">
+                <ShoppingCartOutlinedIcon color="action" />
+                </Badge>
+               </Link>
                 } 
              </div>
            </div>

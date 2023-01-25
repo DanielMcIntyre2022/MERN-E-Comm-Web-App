@@ -56,11 +56,16 @@ router.post('/register', async (req, res, next) => {
 // })
 
 // LOGIN //
+
 router.post('/login', async (req, res, next) => {
     try {
+
         // attempt to find the user in database //
+
         const user = await User.findOne({ username: req.body.username });
+
         // if user entered doesn't match which is in the database throw an error //
+
         if (!user) {
             res.status(401).json('wrong credentials!')
        
@@ -69,7 +74,9 @@ router.post('/login', async (req, res, next) => {
                 process.env.PASS_SEC);
             var Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
         } 
+
         //  check if password entered matches the orignal password entered during registration, if not return error //
+
          else if ( Orginalpassword !== req.body.password ) {
             res.status(401).json('wrong credentials!');
     
@@ -84,14 +91,16 @@ router.post('/login', async (req, res, next) => {
             var { password, ...others} = user._doc;
          }
           else  {
+
             // if password and username both match successfully log user in //
-            res.status(200).json({...others, accessToken})
-            return next();
+
+            return res.status(200).json({...others, accessToken})
+            
           }
           
     } catch (error) {
         res.status(500).json(error);
     }
-})
+});
 
 module.exports = router;
