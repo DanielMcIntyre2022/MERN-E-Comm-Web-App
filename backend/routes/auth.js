@@ -23,61 +23,23 @@ router.post('/register', async (req, res, next) => {
 });
 
 // LOGIN //
-// router.post('/login', async (req, res, next) => {
-//     try {
-//         const user = await User.findOne({ username: req.body.username });
-//         !user && res.status(401).send('wrong credentials!')
 
-//         const hashedPassword = Cryptojs.AES.decrypt(
-//             user.password, 
-//             process.env.PASS_SEC);
-//         const Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
-
-//         Orginalpassword !== req.body.password && 
-//             res.status(401).send('wrong credentials!');
-
-//             const accessToken = jwt.sign({
-//                 id: user._id, 
-//                 isAdmin: user.isAdmin
-//             },
-//                 process.env.JWT_SEC,
-//                 {expiresIn:'3d'}
-//             );
-        
-//         const { password, ...others} = user._doc;
-        
-//         res.status(200).json({...others, accessToken});
-
-//         return next();
-
-//     } catch (error) {
-//         res.status(500).send(error);
-//     }
-// })
-
-// LOGIN //
-
-router.post('/login', async (req, res, next) => {
+router.post('/login', async (req, res) => {
     try {
 
         // attempt to find the user in database //
-
         const user = await User.findOne({ username: req.body.username });
 
         // if user entered doesn't match which is in the database throw an error //
-
         if (!user) {
             res.status(401).json('wrong credentials!')
-       
-            var hashedPassword = Cryptojs.AES.decrypt(
-                user.password, 
-                process.env.PASS_SEC);
-            var Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
         } 
 
-        //  check if password entered matches the orignal password entered during registration, if not return error //
+        var hashedPassword = Cryptojs.AES.decrypt(user.password, process.env.PASS_SEC);
+        var Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
 
-         else if ( Orginalpassword !== req.body.password ) {
+        //  check if password entered matches the orignal password entered during registration, if not return error //
+         if ( Orginalpassword !== req.body.password ) {
             res.status(401).json('wrong credentials!');
     
                 var accessToken = jwt.sign({
@@ -99,6 +61,7 @@ router.post('/login', async (req, res, next) => {
           }
           
     } catch (error) {
+        console.log(error)
         res.status(500).json(error);
     }
 });

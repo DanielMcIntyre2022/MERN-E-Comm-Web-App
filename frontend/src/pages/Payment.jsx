@@ -13,7 +13,6 @@ function Payment() {
     
     const onToken = (token) => {
         setStripeToken(token)
-        console.log(token)
     };
 
     useEffect(() => {
@@ -21,7 +20,7 @@ function Payment() {
             try {
                const response = await axios.post(`${process.env.REACT_APP_BACKENDAPI}/api/checkout/payment`, {
                tokenId:stripeToken.id,
-                amount:2000,
+                // amount:2000,
                }
             );
             console.log(response.data);
@@ -40,8 +39,8 @@ function Payment() {
         image="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         billingAddress
         shippingAddress
-        description=' Your total is $20'
-        amount={2000}
+        // description=' Your total is $20'
+        // amount={2000}
         token={onToken}
         stripeKey={KEY}
         > 
