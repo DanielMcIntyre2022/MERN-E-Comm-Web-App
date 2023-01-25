@@ -59,6 +59,15 @@ function Navbar() {
                     <div className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></div>
                   </div>
                 }  
+                {
+                  loggedUser && <div className='menu-item-three'>
+                  <Link to='/cart'>
+                <Badge badgeContent={cartQuantity} color="primary">
+                  <ShoppingCartOutlinedIcon color="action" />
+               </Badge>
+                </Link>
+              </div>
+                } 
              </div>
            </div>
       </div>
