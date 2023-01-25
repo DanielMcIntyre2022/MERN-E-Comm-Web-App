@@ -14,10 +14,15 @@ function Navbar() {
   const cartQuantity = useSelector(state => state.cart.quantity);
   const loggedUser = useSelector(state => state.user.currentUser);
 
-  const handleClick = () => {
+  const handleLogoutClick = () => {
     logoutUser(dispatch);
     dispatch(clearCart());
   };
+
+  const handleLoginClick = () => {
+    dispatch(clearCart());
+  }
+
   
   return (
     <div className="nav-container h-20 max-sm:-ml-16">
@@ -39,28 +44,21 @@ function Navbar() {
               {
                   loggedUser ? <div className='logout-container'> 
                   <button
-                  onClick={handleClick}
+                  onClick={handleLogoutClick}
                   >
                       LOGOUT 
                   </button>
                   </div> 
                   : <div className='menu-item-two flex space-x-6'>
-                    <div className='max-sm:text-xs'><Link to='/login'>LOGIN</Link></div>
+                    <div className='max-sm:text-xs'>
+                      
+                      <Link to='/login'>      
+                        <button onClick={handleLoginClick}>LOGIN</button>          
+                        </Link>
+                    </div>
                     <div className='max-sm:text-xs'><Link to='/register'>REGISTER</Link></div>
                   </div>
                 }  
-                {
-                  loggedUser ? <div className='menu-item-three'>
-                  <Link to='/cart'>
-                <Badge badgeContent={cartQuantity} color="primary">
-                  <ShoppingCartOutlinedIcon color="action" />
-               </Badge>
-                </Link>
-              </div>
-              : <Badge color="primary">
-              <ShoppingCartOutlinedIcon color="action" />
-           </Badge>
-                } 
              </div>
            </div>
       </div>
