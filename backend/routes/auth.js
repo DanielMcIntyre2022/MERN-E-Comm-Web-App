@@ -27,20 +27,22 @@ router.post('/register', async (req, res, next) => {
 router.post('/login', async (req, res) => {
     try {
 
-        // attempt to find the user in database //
+         // attempt to find the user in database //
         const user = await User.findOne({ username: req.body.username });
+
+        // Decrypt the users encrypted password and store it in an orginal password variable //
+
+        const hashedPassword = Cryptojs.AES.decrypt(user.password, process.env.PASS_SEC);
+        const Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
 
         // if user entered doesn't match which is in the database throw an error //
         if (!user) {
-            res.status(401).json('wrong credentials!')
+            res.status(401).send('wrong credentials!')
         } 
-
-        var hashedPassword = Cryptojs.AES.decrypt(user.password, process.env.PASS_SEC);
-        var Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
 
         //  check if password entered matches the orignal password entered during registration, if not return error //
          if ( Orginalpassword !== req.body.password ) {
-            res.status(401).json('wrong credentials!');
+            res.status(401).send('wrong credentials!');
     
                 var accessToken = jwt.sign({
                     id: user._id, 
@@ -62,7 +64,7 @@ router.post('/login', async (req, res) => {
           
     } catch (error) {
         console.log(error)
-        res.status(500).json(error);
+        res.status(500).send(error);
     }
 });
 
