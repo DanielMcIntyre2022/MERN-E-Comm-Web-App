@@ -1,7 +1,5 @@
 const Product = require('../models/Product');
-// const {verifyTokenAndAdmin} = require('./verifyToken');
 const router = require('express').Router();
-// const Cryptojs = require('crypto-js');
 
 // CREATE/ADD PRODUCTS //
 
