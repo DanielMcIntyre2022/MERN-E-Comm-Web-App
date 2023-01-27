@@ -39,16 +39,6 @@ function ProductList() {
                     <option>Beige</option>
                     <option>Green</option>
                 </select>
-                <select name='size' className="p-2" onChange={handleFilters}>
-                    <option disabled>
-                        Size
-                    </option>
-                    <option>XL</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
-                </select>
             </div>
             <div className="filter m-2"><span className="text-base font-bold mr-2">Sort Products:</span>
                 <select onChange={e => setSort(e.target.value)} className="p-2">

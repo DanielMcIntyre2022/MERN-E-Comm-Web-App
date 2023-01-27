@@ -28,40 +28,48 @@ router.post('/register', async (req, res, next) => {
 router.post('/login', async (req, res) => {
     try {
 
-         // attempt to find the user in database //
+        // ensure that inputs are not submitted empty //
+
+        if (req.body.password?.trim() == '' || req.body.username?.trim() == '') {
+            
+            res.status(401).send('wrong credentials!')
+            return;
+        };
+
+        // attempt to find the user in database //
+
         const user = await User.findOne({ username: req.body.username });
+
+         // if user entered doesn't match which is in the database throw an error //
+
+         if (!user) {
+            res.status(401).send('wrong credentials!')
+            return 
+        } 
 
         // Decrypt the users encrypted password and store it in an orginal password variable //
 
         const hashedPassword = Cryptojs.AES.decrypt(user.password, process.env.PASS_SEC);
         const Orginalpassword = hashedPassword.toString(Cryptojs.enc.Utf8);
 
-        // if user entered doesn't match which is in the database throw an error //
-        if (!user) {
-            res.status(401).send('wrong credentials!')
-        } 
-
         //  check if password entered matches the orignal password entered during registration, if not return error //
          if ( Orginalpassword !== req.body.password ) {
             res.status(401).send('wrong credentials!');
-    
+            return 
          }
-          else  {
 
-            var accessToken = jwt.sign({
-                id: user._id, 
-                isAdmin: user.isAdmin
-            },
-                process.env.JWT_SEC,
-                {expiresIn:'3d'}
-            );
-        
-            const { password, ...others} = user._doc;
+         var accessToken = jwt.sign({
+            id: user._id, 
+            isAdmin: user.isAdmin
+        },
+            process.env.JWT_SEC,
+            {expiresIn:'3d'}
+        );
+    
+        const { password, ...others} = user._doc;
 
-            // if password and username both match successfully log user in //
-            return res.status(200).json({...others, accessToken})
-
-          }
+        // if password and username both match successfully log user in //
+        res.status(200).json({...others, accessToken})
           
     } catch (error) {
         console.log(error)
