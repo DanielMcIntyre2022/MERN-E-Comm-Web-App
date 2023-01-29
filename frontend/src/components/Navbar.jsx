@@ -29,8 +29,8 @@ function Navbar() {
       <div className="wrapper flex justify-between items-center pt-10 pb-10 px-20">
            <div className="left-container flex items-center flex-1">
               <div className="language-container cursor-pointer text-sm p-2.5 max-sm:hidden">EN</div>
-              <div className="search-bar-container flex items-center border p-2.5">
-                <input className='outline-none max-sm:w-28' placeholder='Search'/>
+              <div className="search-bar-container flex items-center border p-2.5  max-sm:hidden">
+                <input className='outline-none' placeholder='Search'/>
                 <i><SearchIcon/></i>
               </div>
            </div>
