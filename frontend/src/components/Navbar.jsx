@@ -25,14 +25,14 @@ function Navbar() {
 
   
   return (
-    <div className="nav-container h-20 max-sm:-ml-16">
+    <div className="nav-container h-20">
       <div className="wrapper flex justify-between items-center pt-10 pb-10 px-20">
            <div className="left-container flex items-center flex-1">
-              <div className="language-container cursor-pointer text-sm p-2.5 max-sm:hidden">EN</div>
+              <div className="language-container cursor-pointer p-2.5 max-sm:hidden">EN</div>
            </div>
            <div className="center-container text-center flex-1">
             <Link to='/'>
-                <h1 className='font-bold max-sm:ml-5 text-2xl max-sm:text-base'>E-Commerce</h1>
+                <h1 className='font-bold text-2xl'>E-Commerce</h1>
             </Link>
            </div>
            <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
