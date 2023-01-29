@@ -3,7 +3,7 @@ import CatergoryItem from "./CatergoryItem";
 
 function Catergories() {
   return (
-    <div className="catergories-container flex p-20 justify-between  mt-10">
+    <div className="catergories-container max-sm:flex-col flex p-20">
         {
             catergories.map(item => (
                 <CatergoryItem item={item} key={item.id}/>
