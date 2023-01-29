@@ -47,10 +47,10 @@ function Products({catergoryLink, filters, sort}) {
   },[sort]);
 
   return (
-    <div className='products-container max-sm:mt-96'>
-      <div className='popular-items-container mt-56 max-sm:mt-10 '>
+    <div className='products-container p-20 mt-32'>
+      <div className='popular-items-container'>
       <h1 className='text-center text-2xl'>Popular Items</h1>
-          <div className='popular-product-photos p-20 flex flex-wrap -mt-20 -mb-10 max-sm:-mt-56 '>
+          <div className='popular-product-photos flex flex-wrap -mt-16'>
             {catergoryLink ? filteredProducts.map(item => (
                 <Product item={item} key={item.id}/>
             )) : products.slice(0,8).map(item => (

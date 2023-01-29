@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Product({item}) {
   return (
-    <div className="product-container flex-1 m-5 min-w-280 h-350 flex items-center justify-center mt-10">
+    <div className="product-container flex-1 m-5 min-w-280 h-350 flex items-center justify-center mt-36">
         <div className="circle">
           <div className="product-image-container flex items-center justify-center w-56">
           <Link to={`/product/${item._id}`}>
