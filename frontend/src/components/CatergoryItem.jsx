@@ -11,7 +11,7 @@ function CatergoryItem({item}) {
             </div>
             <div className="catergory-info-container max-sm:relative absolute w-100% h-full top-0 left-0 flex items-center justify-center flex-col ml-5 mt-5 font-bold">
                 <p className="text-white mb-1">{item.title}</p>
-                <button className="border-4 text-white p-2">SHOP NOW</button>
+                <button className="border-4 text-white p-2 max-sm:absolute">SHOP NOW</button>
             </div>
         </Link>
     </div>
