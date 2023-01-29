@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function CatergoryItem({item}) {
 
   return (
-    <div className="catergory-item-container flex-1 m-3 h-16 -mt-10 relative max-sm:pb-20">
+    <div className="catergory-item-container flex-1 m-3 h-16 -mt-10 relative max-sm:pb-96">
         <Link to={`/products/${item.catergory}`}>
             <div className="catergory-image-container">
                 <img className="w-100% h-80 object-cover" src={item.img}/>
