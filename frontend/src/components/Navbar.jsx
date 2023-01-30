@@ -44,9 +44,8 @@ function Navbar() {
                       LOGOUT 
                   </button>
                   </div> 
-                  : <div className='menu-item-two flex space-x-6'>
-                    <div className='max-sm:text-xs'>
-                      
+                  : <div className='menu-item-two flex space-x-6 max-sm:ml-20'>
+                    <div className='max-sm:text-xs max-sm:ml-12'>
                       <Link to='/login'>      
                         <button onClick={handleLoginClick}>LOGIN</button>          
                         </Link>
