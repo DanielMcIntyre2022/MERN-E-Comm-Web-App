@@ -7,10 +7,10 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <div className="">
+    <div className="overflow-hidden">
         <Annoucements/>
         <Navbar/>
-        {/* <SliderComponent/> */}
+        <SliderComponent/>
         <Catergories/>
         <Products/>
         <Footer/>
