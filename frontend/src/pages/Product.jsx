@@ -1,6 +1,5 @@
 import Annoucements from "../components/Annoucements";
 import Navbar from "../components/Navbar";
-import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -69,7 +68,6 @@ function Product() {
                     </div>
                 </div>
             </div>
-        <NewsLetter/>
         <Footer/>
     </div>
   )

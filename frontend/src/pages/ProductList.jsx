@@ -1,6 +1,5 @@
 import Annoucements from "../components/Annoucements";
 import Navbar from "../components/Navbar";
-import NewsLetter from '../components/NewsLetter';
 import Products from "../components/Products";
 import Footer from "../components/Footer";
 import { useLocation } from 'react-router-dom';
@@ -49,7 +48,6 @@ function ProductList() {
             </div>
          </div>
          <Products catergoryLink={catergoryLink} filters={filters} sort={sort}/>
-         <NewsLetter/>
          <Footer/>
     </div>
   )
