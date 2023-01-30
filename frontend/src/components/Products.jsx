@@ -47,7 +47,7 @@ function Products({catergoryLink, filters, sort}) {
   },[sort]);
 
   return (
-    <div className='products-container p-20'>
+    <div className='products-container p-21'>
       <div className='popular-items-container'>
       <h1 className='text-center text-2xl'>Popular Items</h1>
           <div className='popular-product-photos flex flex-wrap -mt-16'>
