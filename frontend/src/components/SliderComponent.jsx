@@ -18,7 +18,7 @@ function SliderComponent() {
       };
 
     return (
-    <div className='slider-wrapper w-100% max-sm:hidden'>
+    <div className='slider-wrapper max-sm:hidden'>
         <div className='slider-container mt-10'>
                 <Slider {...settings}>
                 {sliderItems.map(item=> (
@@ -29,7 +29,7 @@ function SliderComponent() {
                       </div>
                   <div className='info-container flex-1'>
                       <h1 className='text-7xl'>{item.title}</h1>
-                      <p className='text-lg mt-10 mb-10 font-medium tracking-wide'>{item.description}</p>
+                      <p className='text-lg mt-10 mb-10 font-medium'>{item.description}</p>
                       <button className='p-5 text-xl bg-transparent border-4'><Link to='/products/Jackets'>Shop now</Link></button>
                 </div>
             </div>

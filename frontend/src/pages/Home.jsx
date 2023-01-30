@@ -10,7 +10,7 @@ function Home() {
     <div className="">
         <Annoucements/>
         <Navbar/>
-        <SliderComponent/>
+        {/* <SliderComponent/> */}
         <Catergories/>
         <Products/>
         <Footer/>
