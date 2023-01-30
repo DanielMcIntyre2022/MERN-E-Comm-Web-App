@@ -45,23 +45,23 @@ useEffect(() => {
     <div className="shopping-cart-container">
         <Annoucements/>
         <Navbar/>
-            <div className="shopping-cart-wrapper p-20 max-sm:p-10">
-                <h1 className="text-center">YOUR BAG</h1>
-                <div className="top-container flex items-center justify-between p-10">
-                    <button className="top-btn p-5 border max-sm:ml-12" onClick={() => navigate('/')}>Continue Shopping</button>
+            <div className="shopping-cart-wrapper p-20">
+                <h1 className="text-center mb-10">YOUR BAG</h1>
+            <div className="top-container flex items-center justify-center mb-10">
+                    <button className="top-btn p-5 border" onClick={() => navigate('/')}>Continue Shopping</button>
             </div>
                 <div className="bottom-container flex justify-between max-xl:flex-col">
                     <div className="product-info-container">
                         {
                             cart.products.map(product => (
-                        <div className="product flex justify-between">
-                            <div className="product-detail flex flex-2 ml-10">
-                                <img className="w-44 object-cover max-sm:w-20 max-sm:h-20 max-sm:mt-20" src={product.img}/>
-                            <div className="details p-20 flex flex-col max-sm:-ml-10">
+                        <div className="product">
+                            <div className="product-detail mr-28 mb-10 ml-10">
+                                <img className="w-44 object-cover mb-5" src={product.img}/>
+                            <div className="details flex flex-col">
                                 <h1 className="mb-2"><b className="mr-2">Product:</b>{product.title}</h1>
                                 <h1 className="mb-2"><b className="mr-2">ID:</b>{product._id}</h1>
-                                <h1 className="mb-2"><b>Quantity: </b>{product.quantity}</h1>
-                                <h1 className="mb-2"><b>Price: </b>${product.price * product.quantity}</h1>
+                                <h1 className="mb-2"><b className="mr-2">Quantity: </b>{product.quantity}</h1>
+                                <h1 className="mb-2"><b className="mr-2">Price: </b>${product.price * product.quantity}</h1>
                                  </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ useEffect(() => {
                         }       
                         <hr className="mt-5 mb-5"/>
                     </div>
-                    <div className="product-summary-container flex-1 border p-10 ml-10">
+                    <div className="product-summary-container flex-1 border p-10">
                         ORDER SUMMARY
                     <div className="summary-item mt-5 mb-5 flex justify-between">
                         <span className="summary-total mr-2">Subtotal:</span>
@@ -92,8 +92,9 @@ useEffect(() => {
                     amount={cart.totalPrice +4.99}
                     token={onToken}
                     stripeKey={KEY}
+                    className="-ml-5"
                     />
-                    <span><button className='border-4 ml-10 p-2 max-sm:ml-6' onClick={emptyCartClick}>Clear Cart</button></span>
+                    <span><button className='border-2 ml-5 p-1' onClick={emptyCartClick}>Clear Cart</button></span>
                 </div>
                 </div>
             </div>
