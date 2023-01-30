@@ -93,7 +93,7 @@ useEffect(() => {
                     amount={cart.totalPrice +4.99}
                     token={onToken}
                     stripeKey={KEY}
-                    className="w-12"
+                    className="w-14"
                     />
                     <span><button className='border-2 ml-5 p-1' onClick={emptyCartClick}>Clear Cart</button></span>
                     </div>
