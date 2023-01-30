@@ -37,7 +37,7 @@ function Login() {
                 }
                 }}/>
                 <div className='flex items-center justify-center'>
-                <button className="border-4 p-2 w-50%" onClick={handleClick}>LOGIN</button>
+                <button className="border-4 p-2" onClick={handleClick}>LOGIN</button>
                 </div>
                {
                 error && <span className='text-red-400'>Wrong username or password</span> 
