@@ -20,28 +20,31 @@ function Login() {
   return (
     <>
     <Navbar/>
-    <div className="register-page-container w-screen h-screen flex items-center justify-center">
-        <div className="register-wrapper p-20 w-40% max-sm:w-75%">
-            <h1 className="text-lg">SIGN IN</h1>
+    <div className="login-page-container w-screen h-screen flex items-center justify-center">
+        <div className="login-wrapper w-40%">
+            <h1 className="text-lg text-center">SIGN IN</h1>
             <form className="flex flex-col flex-wrap">
-                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="username" onChange={(e) => {
+                <input className="border-4 mb-3 mt-3 p-2" placeholder="username" onChange={(e) => {
                   setUserName(e.target.value);
                   if (username.trim () == '' && password.trim() == '') {
-                    console.log('test')
                     dispatch(resetError());
                   }
                 }}/>
-                <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => {
+                <input className="border-4 mb-3 mt-3 p-2" placeholder="password" type="password" onChange={(e) => {
                   setPassword(e.target.value);
                 if (username.trim () == '' && password.trim() == '') {
                   dispatch(resetError());
                 }
                 }}/>
-                <button className="border-4 p-2" onClick={handleClick}>LOGIN</button>
+                <div className='flex items-center justify-center'>
+                <button className="border-4 p-2 w-50%" onClick={handleClick}>LOGIN</button>
+                </div>
                {
                 error && <span className='text-red-400'>Wrong username or password</span> 
                } 
+               <div className='flex items-center justify-center mt-10'>
                 <a className="cursor-pointer"><Link to='/register'>Create a new account</Link></a>
+                </div>
             </form>
         </div>
     </div>
