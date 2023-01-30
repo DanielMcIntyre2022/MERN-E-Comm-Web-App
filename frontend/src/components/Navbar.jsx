@@ -1,4 +1,3 @@
-import SearchIcon from '@mui/icons-material/Search';
 import { Badge } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { logoutUser } from '../redux/apiCalls';
@@ -32,7 +31,7 @@ function Navbar() {
            </div>
            <div className="center-container text-center flex-1">
             <Link to='/'>
-                <h1 className='font-bold text-2xl max-sm:-ml-16'>E-Commerce</h1>
+                <h1 className='font-bold text-2xl max-sm:-ml-16 max-sm:text-base'>E-Commerce</h1>
             </Link>
            </div>
            <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
