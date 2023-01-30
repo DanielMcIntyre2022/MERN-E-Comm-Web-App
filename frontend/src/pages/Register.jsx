@@ -13,7 +13,7 @@ function Register() {
     <>
     <Navbar/>
     <div className="register-page-container w-screen h-screen flex items-center justify-center">
-        <div className="register-wrapper -mt-20 w-40% ">
+        <div className="register-wrapper w-40% ">
             <h1 className="text-lg text-center">CREATE AN ACCOUNT</h1>
             <form className="flex flex-col flex-wrap">
                 <input className="border-4 flex-1 mb-3 mt-3 p-2" placeholder="name"/>
