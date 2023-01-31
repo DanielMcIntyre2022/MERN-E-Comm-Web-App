@@ -31,7 +31,7 @@ function Navbar() {
            </div>
            <div className="center-container text-center flex-1">
             <Link to='/'>
-                <h1 className='font-bold text-2xl max-sm:-ml-16 max-sm:text-base'>Dan's E-Commerce</h1>
+                <h1 className='font-bold text-2xl max-sm:-ml-16 max-sm:text-base'>Daniel's E-Commerce</h1>
             </Link>
            </div>
            <div className="right-container flex items-center justify-end flex-1 max-sm:justify-center max-sm:flex-2">
