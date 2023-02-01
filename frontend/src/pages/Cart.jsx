@@ -89,7 +89,7 @@ useEffect(() => {
                     billingAddress
                     shippingAddress
                     description={`Your total is $${cart.totalPrice + 4.99}`}
-                    amount={cart.totalPrice +499}
+                    amount={`${cart.totalPrice + 4.99}`}
                     token={onToken}
                     stripeKey={KEY}
                     />
