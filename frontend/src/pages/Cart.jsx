@@ -83,7 +83,6 @@ useEffect(() => {
                         <span className="summary-shipping font-bold mr-2">Total:</span>
                         <span className="summary-price">${cart.totalPrice + 499}</span>
                     </div>
-                    <div className="flex">
                     <StripeCheckout
                     name='E-Commerce Checkout'
                     image="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
@@ -93,10 +92,8 @@ useEffect(() => {
                     amount={cart.totalPrice +499}
                     token={onToken}
                     stripeKey={KEY}
-                    className="w-14"
                     />
-                    <span><button className='border-2 ml-5 p-1' onClick={emptyCartClick}>Clear Cart</button></span>
-                    </div>
+                    <span><button className='border-2 p-1 ml-5 max-sm:mt-5' onClick={emptyCartClick}>Clear Cart</button></span>    
                 </div>
                 </div>
             </div>
