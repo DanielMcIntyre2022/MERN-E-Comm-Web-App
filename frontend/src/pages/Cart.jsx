@@ -81,7 +81,7 @@ useEffect(() => {
                     </div>
                     <div className="summary-total mt-5 mb-5 flex justify-between">
                         <span className="summary-shipping font-bold mr-2">Total:</span>
-                        <span className="summary-price">${cart.totalPrice + 499}</span>
+                        <span className="summary-price">${cart.totalPrice + 4.99}</span>
                     </div>
                     <StripeCheckout
                     name='E-Commerce Checkout'
