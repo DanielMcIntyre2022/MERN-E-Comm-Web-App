@@ -84,7 +84,7 @@ useEffect(() => {
                         <span className="summary-price">${cart.totalPrice + 4.99}</span>
                     </div>
                     <StripeCheckout
-                    name='E-Commerce Checkout'
+                    name='Checkout'
                     image="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     billingAddress
                     shippingAddress
