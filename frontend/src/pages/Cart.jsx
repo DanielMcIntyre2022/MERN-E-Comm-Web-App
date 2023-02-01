@@ -81,7 +81,7 @@ useEffect(() => {
                     </div>
                     <div className="summary-total mt-5 mb-5 flex justify-between">
                         <span className="summary-shipping font-bold mr-2">Total:</span>
-                        <span className="summary-price">${cart.totalPrice + 4.99}</span>
+                        <span className="summary-price">${cart.totalPrice + 499}</span>
                     </div>
                     <div className="flex">
                     <StripeCheckout
@@ -89,8 +89,8 @@ useEffect(() => {
                     image="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     billingAddress
                     shippingAddress
-                    description={`Your total is ${cart.totalPrice + 4.99}`}
-                    amount={cart.totalPrice +4.99}
+                    description={`Your total is $${cart.totalPrice + 4.99}`}
+                    amount={cart.totalPrice +499}
                     token={onToken}
                     stripeKey={KEY}
                     className="w-14"
